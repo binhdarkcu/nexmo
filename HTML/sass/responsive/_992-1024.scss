@@ -1,0 +1,158 @@
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+	body{
+		overflow-x: hidden;
+	}
+	.profile.setnotification{
+		.profileLeft{
+			width: 345px;
+		}
+		.profileRight{
+			    width: 555px;
+		}
+	}
+	.cateList{
+		    width: 670px;
+		.courseList{
+			    width: 100%;
+			    text-align: left;
+		}
+	}
+	.banner .reportContent{
+		 ul li.stud {
+		 	div{
+			 	font-size: 80px;
+			 }
+			 span{
+			 	font-size: 19px;
+			 }
+		 }
+	}
+	.course-fee {
+		.upgrade {
+			.upgradebox{
+				    width: 31%;
+    			margin-right: 3%;
+    			&.last{
+    				margin-right: 0;
+    			}
+    			 .head h2{
+    			 	font-size: 52px;
+    			 }
+			}
+		}
+	}
+	.document_detail{
+		 .slideViewMode{
+		 	 .slidebg{
+		 	 	background-size: contain;
+    			height: 575px;
+		 	 }
+		 	 .relativeBox{
+		 	 	width: 83%;
+		 	 }
+		 }
+	}
+	.courseList{
+		text-align: center;
+		.userinfo, .info, h4{
+			text-align: left;
+		}
+		li.last{
+			    margin-right: 30px;
+		}
+
+	}
+	.special {
+		.special-left{
+			width: 50%;
+			ul{
+				li{
+					width: 48%;
+					margin-right: 2%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}	
+		.special-right{
+			width: 48%; 
+			margin-left: 2%;
+		}
+	}
+ 	.introduce {
+ 		.colleft{
+ 			width: 50%;
+ 		}
+ 		.colright{
+ 			width: 50%;
+ 		}
+ 	}
+ 	.upgrade{
+ 		.tablecell{
+ 			display: table;
+ 			width: 100%;
+ 			text-align: center;
+ 		}
+ 	}
+ 	.upgrade .upgradebox{
+ 		width: 30%;
+ 		margin-right: 3%;
+ 		.head h2{
+ 			font-size: 55px;
+ 		}
+ 	}
+ 	footer{
+ 		.row{
+ 			margin-left: 15px;
+ 			margin-right: 15px;
+ 		}
+ 	}
+
+
+ 	.commentDetail {
+		.videoPlayer .top .lessiontitle{
+			float: left;
+			margin-bottom: 15px;
+		}
+	}
+ 	header .logged .searchForm{
+		float: right; 
+	}
+	.commentDetail {
+		.videoPlayer{
+			 .videoBox{
+			 	.mainScreen{
+					width: 665px;
+				}
+			 }
+		}
+		.commentLeft{
+			width: 100%;
+			.tabContent{
+				 .tabcomment{
+					  .box{
+						width: 77%;	  	
+					  }
+				 }
+			}
+		}
+		.commentRight{
+			width: 100%;
+			.comment-share {
+				span{
+				margin-top:0;
+				}
+				.social{
+					float: none;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.courseFeatures {
+		ul.courseList{
+			width: 100%;
+		}
+	}
+}

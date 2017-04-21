@@ -1,0 +1,7 @@
+.btn_commom {
+  padding: 8px 34px 0;
+  background: #3399cc;
+  display: table;
+  height: 34px;
+  @include boderRadius(20px)
+}

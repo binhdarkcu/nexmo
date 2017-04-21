@@ -58,128 +58,85 @@
      </h3>
      <div class="Products-grid" data-reactid="367">
         <div class="Products-item Products-item--sms" data-reactid="368">
-           <div class="Products-item-img" data-reactid="369"><a href="https://www.nexmo.com/products/sms" data-reactid="370"><img src="./Nexmo - APIs for SMS, Voice and Phone Verifications_files/hp-product-sms.svg" alt="sms" data-reactid="371"></a></div>
+           <div class="Products-item-img" data-reactid="369"><a href="https://www.nexmo.com/products/sms" data-reactid="370"><img src="images/hp-product-sms.svg" alt="sms" data-reactid="371"></a></div>
            <h4 data-reactid="372"><a href="https://www.nexmo.com/products/sms" data-reactid="373">SMS</a></h4>
            <p data-reactid="374">An SMS API with built-in intelligence for maximum speed, deliverability.</p>
         </div>
         <div class="Products-item Products-item--voice" data-reactid="375">
-           <div class="Products-item-img" data-reactid="376"><a href="https://www.nexmo.com/products/voice" data-reactid="377"><img src="./Nexmo - APIs for SMS, Voice and Phone Verifications_files/hp-product-voice.svg" alt="voice" data-reactid="378"></a></div>
-           <h4 data-reactid="379"><a href="https://www.nexmo.com/products/voice" data-reactid="380">Voice</a></h4>
-           <p data-reactid="381">Build powerful and reliable voice products with our simple and easy-to-use API.</p>
+           <div class="Products-item-img"><a href="https://www.nexmo.com/products/voice"><img src="images/hp-product-voice.svg" alt="voice" data-reactid="378"></a></div>
+           <h4><a href="https://www.nexmo.com/products/voice" data-reactid="380">Voice</a></h4>
+           <p>Build powerful and reliable voice products with our simple and easy-to-use API.</p>
         </div>
         <div class="Products-item Products-item--verify" data-reactid="382">
-           <div class="Products-item-img" data-reactid="383"><a href="https://www.nexmo.com/products/verify" data-reactid="384"><img src="./Nexmo - APIs for SMS, Voice and Phone Verifications_files/hp-product-verify.svg" alt="verify" data-reactid="385"></a></div>
+           <div class="Products-item-img" data-reactid="383"><a href="https://www.nexmo.com/products/verify" data-reactid="384"><img src="images/hp-product-verify.svg" alt="verify" data-reactid="385"></a></div>
            <h4 data-reactid="386"><a href="https://www.nexmo.com/products/verify" data-reactid="387">Verify</a></h4>
            <p data-reactid="388">One API to verify any phone, anywhere. Let us do the heavy lifting, and pay only for results.</p>
         </div>
         <div class="Products-item Products-item--chat" data-reactid="389">
-           <div class="Products-item-img" data-reactid="390"><a href="https://www.nexmo.com/products/chat" data-reactid="391"><img src="./Nexmo - APIs for SMS, Voice and Phone Verifications_files/hp-product-chat.svg" alt="chat" data-reactid="392"></a></div>
+           <div class="Products-item-img" data-reactid="390"><a href="https://www.nexmo.com/products/chat" data-reactid="391"><img src="images/hp-product-chat.svg" alt="chat" data-reactid="392"></a></div>
            <h4 data-reactid="393"><a href="https://www.nexmo.com/products/chat" data-reactid="394">Chat App</a></h4>
            <p data-reactid="395">Use a single API to connect to multiple chat apps for real-time customer conversations.</p>
         </div>
         <div class="Products-item Products-item--insight" data-reactid="396">
-           <div class="Products-item-img" data-reactid="397"><a href="https://www.nexmo.com/products/number-insight" data-reactid="398"><img src="./Nexmo - APIs for SMS, Voice and Phone Verifications_files/hp-product-insight.svg" alt="insight" data-reactid="399"></a></div>
+           <div class="Products-item-img" data-reactid="397"><a href="https://www.nexmo.com/products/number-insight" data-reactid="398"><img src="images/hp-product-insight.svg" alt="insight" data-reactid="399"></a></div>
            <h4 data-reactid="400"><a href="https://www.nexmo.com/products/number-insight" data-reactid="401">Number Insight</a></h4>
            <p data-reactid="402">Use our API to get phone number data, reach real people, and eliminate fake accounts.</p>
         </div>
      </div>
   </section>
-  <a name="Clients" data-reactid="403"></a>
-  <section class="Clients" data-reactid="404">
-     <div class="Clients-content" data-reactid="405">
-        <div class="slick-initialized slick-slider" data-reactid="406">
-           <div class="slick-list" data-reactid="407">
-              <div class="slick-track" data-reactid="408" style="opacity: 1; width: 4640px; transform: translate3d(-1160px, 0px, 0px);">
-                 <div class="slick-slide Client-box-item" data-index="-2" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image gett"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Taxi hailing service, Gett, is growing rapidly and has turned to Nexmo’s SMS API to reliably simplify the complexities of global expansion.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide Client-box-item" data-index="-1" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image alibaba"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Online marketplace, Alibaba, relies on our SMS services to enhance security and give customers added peace of mind, as well as keeping them up to date with the latest perks and offers.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide slick-active Client-box-item" data-index="0" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image reuters"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Thomson Reuters has a reputation for being up to the minute. So when they needed to reliably reach users across 30 countries about latest product features and updates, they turned to Nexmo’s SMS API.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide slick-active Client-box-item" data-index="1" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image grab"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Grab, the leading ride-hailing platform in Southeast Asia, relies on the Nexmo Voice API to communicate with customers in several countries.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide Client-box-item" data-index="2" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image gett"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Taxi hailing service, Gett, is growing rapidly and has turned to Nexmo’s SMS API to reliably simplify the complexities of global expansion.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide Client-box-item" data-index="3" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image alibaba"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Online marketplace, Alibaba, relies on our SMS services to enhance security and give customers added peace of mind, as well as keeping them up to date with the latest perks and offers.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide slick-active Client-box-item" data-index="4" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image reuters"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Thomson Reuters has a reputation for being up to the minute. So when they needed to reliably reach users across 30 countries about latest product features and updates, they turned to Nexmo’s SMS API.</p>
-                       </h4>
-                    </div>
-                 </div>
-                 <div class="slick-slide slick-active Client-box-item" data-index="5" style="width: 580px;">
-                    <div class="Clients-box-item-logo">
-                       <div class="image grab"></div>
-                    </div>
-                    <div class="Clients-box-item-content">
-                       <h4>
-                          <p>Grab, the leading ride-hailing platform in Southeast Asia, relies on the Nexmo Voice API to communicate with customers in several countries.</p>
-                       </h4>
-                    </div>
-                 </div>
-              </div>
-           </div>
-           <button type="button" data-role="none" class="slick-arrow slick-prev" style="display:block;" data-reactid="457"> Previous</button><button type="button" data-role="none" class="slick-arrow slick-next" style="display:block;" data-reactid="458"> Next</button>
-           <ul class="slick-dots" style="display: block;">
-              <li class="slick-active"><button>1</button></li>
-              <li class=""><button>2</button></li>
-              <li class=""><button>3</button></li>
-              <li class=""><button>4</button></li>
-           </ul>
-        </div>
+  <a name="Clients"></a>
+  <section class="Clients">
+     <div class="Clients-content">
+         <div class="Client-box-item">
+            <div class="Clients-box-item-logo">
+               <div class="image gett"></div>
+            </div>
+            <div class="Clients-box-item-content">
+               <h4>
+                  <p>Taxi hailing service, Gett, is growing rapidly and has turned to Nexmo’s SMS API to reliably simplify the complexities of global expansion.</p>
+               </h4>
+            </div>
+         </div>
+         <div class="Client-box-item" data-index="-1">
+            <div class="Clients-box-item-logo">
+               <div class="image alibaba"></div>
+            </div>
+            <div class="Clients-box-item-content">
+               <h4>
+                  <p>Online marketplace, Alibaba, relies on our SMS services to enhance security and give customers added peace of mind, as well as keeping them up to date with the latest perks and offers.</p>
+               </h4>
+            </div>
+         </div>
+         <div class="Client-box-item" data-index="0">
+            <div class="Clients-box-item-logo">
+               <div class="image reuters"></div>
+            </div>
+            <div class="Clients-box-item-content">
+               <h4>
+                  <p>Thomson Reuters has a reputation for being up to the minute. So when they needed to reliably reach users across 30 countries about latest product features and updates, they turned to Nexmo’s SMS API.</p>
+               </h4>
+            </div>
+         </div>
+         <div class="Client-box-item">
+            <div class="Clients-box-item-logo">
+               <div class="image grab"></div>
+            </div>
+            <div class="Clients-box-item-content">
+               <h4>
+                  <p>Grab, the leading ride-hailing platform in Southeast Asia, relies on the Nexmo Voice API to communicate with customers in several countries.</p>
+               </h4>
+            </div>
+         </div>
+         <div class="Client-box-item">
+            <div class="Clients-box-item-logo">
+               <div class="image gett"></div>
+            </div>
+            <div class="Clients-box-item-content">
+               <h4>
+                  <p>Taxi hailing service, Gett, is growing rapidly and has turned to Nexmo’s SMS API to reliably simplify the complexities of global expansion.</p>
+               </h4>
+            </div>
+         </div>
      </div>
   </section>
   <section class="InfoBox is-grey " data-reactid="459">

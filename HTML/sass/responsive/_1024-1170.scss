@@ -1,0 +1,139 @@
+@media only screen and (min-width: 1024px) and (max-width: 1210px) {
+	body{
+		overflow-x: hidden;
+	}
+	
+	.profile.setnotification{
+		.profileLeft{
+			width: 345px;
+		}
+		.profileRight{
+			    width: 555px;
+		}
+	}
+	.upgrade{
+ 		 .upgradebox{
+ 		 	width: 33%;
+ 		 	 .head h2{
+ 		 	 	font-size: 50px;
+ 		 	 }
+ 		 }
+ 	}
+	.cateList{
+		    width: 700px;
+		.courseList{
+			    width: 100%;
+			    text-align: left;
+		}
+	}
+	.commentDetail {
+		.videoPlayer .top .lessiontitle{
+			float: left;
+			margin-bottom: 15px;
+		}
+	}
+	.course-fee {
+		.upgrade {
+			.upgradebox{
+				    width: 31%;
+    			margin-right: 3%;
+    			&.last{
+    				margin-right: 0;
+    			}
+			}
+		}
+	}
+	header .logged .searchForm{
+		float: right; 
+	}
+	.commentDetail {
+		.videoPlayer{
+			 .videoBox{
+			 	.mainScreen{
+					width: 665px;
+				}
+			 }
+		}
+		.commentLeft{
+			width: 100%;
+			.tabContent{
+				 .tabcomment{
+					  .box{
+						width: 77%;	  	
+					  }
+				 }
+			}
+		}
+		.commentRight{
+			width: 100%;
+			.comment-share {
+				span{
+				margin-top:0;
+				}
+				.social{
+					float: none;
+					display: inline-block;
+				}
+			}
+		}
+
+	}
+	.document_detail{
+		 .slideViewMode{
+		 	 .slidebg{
+		 	 	background-size: contain;
+    			height: 575px;
+		 	 }
+		 	 .relativeBox{
+		 	 	width: 83%;
+		 	 }
+		 }
+	}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1170px) {
+	
+	.courseList{
+		text-align: center;
+		.userinfo, .info, h4{
+			text-align: left;
+		}
+		li.last{
+			    margin-right: 30px;
+		}
+
+	}
+	.special {
+		.special-left{
+			width: 50%;
+			ul{
+				li{
+					width: 48%;
+					margin-right: 2%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}	
+		.special-right{
+			width: 48%; 
+			margin-left: 2%;
+		}
+	}
+ 	.introduce {
+ 		.colleft{
+ 			width: 50%;
+ 		}
+ 		.colright{
+ 			width: 50%;
+ 		}
+ 	}
+ 	.upgrade .upgradebox{
+ 		width: 30%;
+ 		margin-right: 3%;
+ 		.head h2{
+ 			font-size: 55px;
+ 		}
+ 	}
+
+}
