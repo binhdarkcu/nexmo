@@ -1,0 +1,133 @@
+.popup{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	min-width: 768px;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	.overlays{
+		background: #000;
+		opacity: 0.52;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		filter: alpha(opacity=52);
+		z-index: 1000;
+	}
+	.popupContent{
+		background: #fff;
+		@include border-radius(15px);
+		z-index: 1001;
+		width: 433px;
+		position: relative;
+		padding: 48px 30px 34px 30px;
+	    margin: 15px auto 0;
+		color: #535353;
+
+		h3{
+			@include openSanNormal(30px);
+			color: #354556;
+			margin-top: 0;
+			padding-bottom: 10px;
+		}
+		input[type="text"], input[type="password"]{
+			@include openSanNormal(14px);
+			background: #e9e9e9;
+			border: 1px solid #e9e9e9;
+			color: #535353;
+			height: 40px;
+		    width: 100%;
+		    padding-left: 17px;
+		    @include border-radius(5px);
+		    outline: none;
+			&::-webkit-input-placeholder { /* WebKit browsers */
+			    color:    #535353;
+			}
+			&:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+			    color:    #535353;
+			}
+			&::-moz-placeholder{ /* Mozilla Firefox 19+ */
+			    color:    #535353;
+			}
+			&:-ms-input-placeholder{ /* Internet Explorer 10+ */
+			    color:    #535353;
+			}
+		}
+		p{
+			margin-bottom: 25px; 
+		}
+		a.forgotpw{
+			@include openSanNormal(14px);
+			text-decoration: underline;
+			color: #354556;
+		}
+		input.btnblue{
+			@include border-radius(5px);
+			@include openSanBold(18px);
+			margin-top: 33px;
+			width: 100%;
+		}
+		.remember{
+			padding-top: 30px;
+			label[for="ckremember"]{
+				color: #535353;
+			}
+			input[type="checkbox"]{
+				position: relative;
+				top: 2px;
+			}
+		}
+		a.btnfb{
+			margin-top: 35px;
+		}
+		a.btngp, a.btnfb{
+			background: #3b5998;
+			@include openSanBold(16px);
+			padding: 12px 0 10px;
+			width: 100%;
+			letter-spacing: 1.5px;
+			margin-bottom: 27px;
+		}
+		a.btngp{
+			background: #b63847;
+			margin-bottom: 38px;
+		}
+		a.createAccount{
+			color: #3b97d3;
+			@include openSanNormal(14px);
+			display: table;
+			margin: 0 auto;
+		}
+	}
+	&.register{
+		a.btnblue{
+			@include border-radius(5px);
+			width: 100%;
+			@include openSanBold(18px);
+		}
+		span.or{
+			@include openSanNormal(14px);
+			text-transform: uppercase;
+			text-align: center;
+			display: table;
+			margin: 27px auto 0;
+		}
+		a.btnfb{
+			margin-bottom: 17px;
+			    margin-top: 27px;
+		}
+		.claim{
+			text-align: center;
+		}
+		.hasaccount{
+			padding-top: 28px;
+		}
+		a.createAccount {
+			display: inline-block;
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+	.banner .reportContent{
+		 ul li.stud {
+		 	div{
+			 	font-size: 80px;
+			 }
+			 span{
+			 	font-size: 19px;
+			 }
+		 }
+	}
+	.courseList{
+		text-align: center;
+		.userinfo, .info, h4{
+			text-align: left;
+		}
+		li.last{
+			    margin-right: 30px;
+		}
+
+	}
+	.special {
+		.special-left{
+			width: 50%;
+			ul{
+				li{
+					width: 48%;
+					margin-right: 2%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}	
+		.special-right{
+			width: 48%; 
+			margin-left: 2%;
+		}
+	}
+ 	.introduce {
+ 		.colleft{
+ 			width: 50%;
+ 		}
+ 		.colright{
+ 			width: 50%;
+ 		}
+ 	}
+ 	.upgrade{
+ 		.tablecell{
+ 			display: table;
+ 			width: 100%;
+ 			text-align: center;
+ 		}
+ 	}
+ 	.upgrade .upgradebox{
+ 		width: 30%;
+ 		margin-right: 3%;
+ 		.head h2{
+ 			font-size: 55px;
+ 		}
+ 	}
+ 	footer{
+ 		.row{
+ 			margin-left: 15px;
+ 			margin-right: 15px;
+ 		}
+ 	}
+}
