@@ -1,4 +1,4 @@
-<?php include("header.php")?>
+<?php get_header(); ?>
 <section class="Hero Hero--light Hero--blue-blue">
    <div class="Hero-midGround"></div>
    <div class="Hero-wrapper">
@@ -83,7 +83,7 @@
    </div>
 </section>
 
-<?php include("tpl-client.php")?>
+<?php echo get_template_part("tpl","client.php")?>
 
 <section class="InfoBox is-grey " data-reactid="459">
    <a name="InfoBox" data-reactid="460"></a>
@@ -117,4 +117,4 @@
       </div>
    </div>
 </section>
-<?php include("footer.php");?>
+<?php get_footer();?>

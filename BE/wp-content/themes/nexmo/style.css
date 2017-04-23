@@ -1,0 +1,176 @@
+/*
+Theme Name: Nexmo
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 1.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: Nexmo
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+.Blog {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 30px;
+    padding: 75px 0;
+}
+.Blog-sidebar a {
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #f0537a;
+    line-height: 1.3;
+}
+.Blog-sidebar h2, .Blog-sidebar h3 {
+    font-weight: 100;
+    font-size: 36px;
+    font-size: 3.6rem;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+.Blog-sidebarContainer {
+    width: 4.6%;
+    float: left;
+    margin-left: 2.21%;
+    width: 25.03%;
+    float: right;
+    padding-right: 30px;
+}
+.Blog-sidebar {
+    width: 100%;
+}
+.Blog-sidebar form {
+    position: relative;
+}
+input[type=search] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+.Blog-sidebar input[type=email], .Blog-sidebar input[type=number], .Blog-sidebar input[type=password], .Blog-sidebar input[type=search], .Blog-sidebar input[type=tel], .Blog-sidebar input[type=text], .Form input[type=email], .Form input[type=number], .Form input[type=password], .Form input[type=tel], .Form input[type=text], .Form select, .Form textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: #f2f4f5;
+    padding: 0 15px;
+    width: 100%;
+    height: 50px;
+}
+.Blog-sidebar input[type=email], .Blog-sidebar input[type=number], .Blog-sidebar input[type=password], .Blog-sidebar input[type=search], .Blog-sidebar input[type=tel], .Blog-sidebar input[type=text] {
+    width: 82%;
+    padding-right: 0;
+}
+.Btn, button {
+    display: inline-block;
+    background-color: #f0537a;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 2px 20px 0;
+    text-decoration: none;
+    line-height: 44px;
+    letter-spacing: 1.14px;
+    font-family: averta;
+    font-weight: 600;
+    font-size: 16px;
+    font-size: 1.6rem;
+    -webkit-transition: background-color .3s ease-in,color .3s ease-in;
+    transition: background-color .3s ease-in,color .3s ease-in;
+    text-align: center;
+}
+.Blog-sidebar .widget_search button {
+    display: inline-block;
+    padding: 0;
+    width: 55px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    border-left: 5px solid #fff;
+    z-index: 1;
+}
+.Blog-sidebarContent {
+    height: auto;
+    max-height: none;
+}
+.Blog-content {
+    width: 4.6%;
+    margin-left: 2.21%;
+    width: 65.89%;
+    float: left;
+    padding-right: 30px;
+}
+.Blog-content.Blog-single {
+    padding-right: 9%;
+}
+.Blog-thumbnail {
+    width: 25%;
+    float: left;
+}
+.Blog-content img {
+    min-width: unset;
+    max-width: 100%;
+    height: auto;
+}
+.Blog-content.Blog-archive .Blog-thumbnail img {
+    max-width: 100%;
+    height: auto;
+}
+.Blog-summary.has-image {
+    width: 70%;
+    float: right;
+}
+.Blog-content article h4 {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.Blog a {
+    font-weight: 400;
+    color: #f0537a;
+        font-size: 2.4rem;
+}
+.Blog h4 a {
+    text-decoration: none;
+}
+.Blog p, .Blog span {
+    line-height: 150%;
+}
+.Blog .author {
+    font-size: 14px;
+}
+.Blog .author a, .Blog p a{
+    font-size: 14px;
+}
+.Blog p{
+    font-size: 14px;
+    padding-top: 10px;
+}
+.Blog-content article:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.Blog-content article {
+    margin: 0 0 75px;
+}
+.Blog-sidebarContent a{
+    font-size: 14px;
+}
+.Blog:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.Blog .page-numbers {
+    margin-right: 20px;
+}
+.Blog .page-numbers {
+    margin-right: 20px;
+    font-size: 14px;
+}
