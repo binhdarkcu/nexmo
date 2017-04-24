@@ -1,4 +1,8 @@
-<?php get_header();?>
+<?php get_header();
+
+while ( have_posts() ) : the_post();
+?>
+
 <div class="sms-product-page">
     <section class="Hero Hero--light Hero--blue-purple">
         <div class="Hero-midGround"></div>
@@ -19,7 +23,6 @@
                 <div class="Demo-code">
                     <h2>Test drive the code</h2>
                     <h3>Try the code to see just how simple our SMS API is.</h3>
-                    <?php print_r(get_the_ID())?>
                     <div class="Demo-code-block"><code><pre><?php the_content(); ?></pre></code><span class="Demo-code-copy">Copy</span></div>
                     </div>
                     <div class="Demo-docs">
@@ -77,7 +80,7 @@
                         <div class="FeaturesSecondary-item">
                             <div>
                                 <h5>
-                                    <?php if(get_field('function_content_url')) {
+                                    <?php if(!get_sub_field('function_content_url')) {
                                         the_sub_field('function_content_title');
                                     }
                                             
@@ -99,4 +102,5 @@
     </section>
     <?php get_template_part("tpl","client")?>
 </div>
+<?php endwhile; ?>
 <?php get_footer();?>
