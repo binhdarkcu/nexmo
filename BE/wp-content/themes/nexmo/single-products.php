@@ -1,9 +1,9 @@
 <?php get_header();
-
+global $post;
 while ( have_posts() ) : the_post();
 ?>
 
-<div class="sms-product-page">
+<div class="<?php echo( basename(get_permalink()) );?>-product-page">
     <section class="Hero Hero--light Hero--blue-purple">
         <div class="Hero-midGround"></div>
         <div class="Hero-wrapper">
