@@ -1,4 +1,4 @@
-<?php include("header.php")?>
+<?php get_header();?>
 <div class="sms-product-page">
     <section class="Hero Hero--light Hero--blue-purple">
         <div class="Hero-midGround"></div>
@@ -128,6 +128,6 @@
             </div>
         </div>
     </section>
-    <?php include("tpl-client.php")?>
+    <?php get_template_part("tpl","client")?>
 </div>
-<?php include("footer.php");?>
+<?php get_footer();?>

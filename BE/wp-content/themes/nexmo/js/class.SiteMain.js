@@ -1,7 +1,8 @@
 // JavaScript Document
 var SiteMain = (function() {
 	function init(){
-		createSlick('.Clients-content');
+		createSlick('.Clients-content', 2, 2);
+		createSlick('.Carousel', 1, 1)
 	}
 
 	function openPopup(idDiv){
@@ -13,10 +14,10 @@ var SiteMain = (function() {
 		$('.popup').css('display', 'none');
 	}
 
-	function createSlick(ele){
+	function createSlick(ele, slideshow, slidescroll){
 		$(ele).slick({
-			slidesToShow: 2,
-  			slidesToScroll: 2,
+			slidesToShow: slideshow,
+  			slidesToScroll: slidescroll,
 			dots: true,
 			infinite: true
 		});
