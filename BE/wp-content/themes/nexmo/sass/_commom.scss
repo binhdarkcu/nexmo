@@ -5,3 +5,14 @@
   height: 34px;
   @include boderRadius(20px)
 }
+.UseCaseSingle-help{
+        max-width: 1024px;
+}
+.UseCaseSingle-howItWorks.is-not-a-tree .UseCaseSingle-howItWorksItems .UseCaseSingle-howItWorksItem{
+    background-size: 85px;
+    background-position: 115px 0px;
+}
+
+.UseCaseSingle-howItWorksItemText {
+    background-position: 70px;
+}
