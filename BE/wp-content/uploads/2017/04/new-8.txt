@@ -1,0 +1,6 @@
+<button type="submit" class="btn glc-success-btn pull-right border50" style="margin-left:10px" ng-disabled="tierForm.$invalid  ||tierForm.$invalid == null || !tierForm.$dirty || tier.MinimumUnit >= tier.MaximumUnit|| (tier.MinimumUnit > 2147483647) || (tier.MaximumUnit > 2147483647) || (Number(tier.Price) > 2147483647 && !DisablePrice) || tier.Price < 0">
+<div ng-show="!DisablePrice" class="form-group" ng-class="{ 'has-error' : (tierForm.Price.$invalid || tier.Price < 0 || (tier.Price > 2147483647) )&& !tierForm.Price.$pristine }">
+                    <label for="Price">Unit RRP</label>
+                    <input type="text" name="Price" class="form-control" ng-model="tier.Price" ng-pattern="/^[0-9]+(\.\w*)?$/" fraction="2" numeric-input=""/>
+                  <p ng-style="{'visibility': (tier.Price > 2147483647) ? 'visible' : 'hidden'}" class="help-block">This should be less</p>
+                </div>
