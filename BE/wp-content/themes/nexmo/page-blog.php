@@ -1,4 +1,4 @@
-<?php include("header.php")?>
+<?php get_header("blog"); ?>
 <main role="main">
    <section class="PageTitle PageTitle--blog has-gradient-bg has-white-text">
       <div class="PageTitle-content">
@@ -277,4 +277,4 @@
    </section>
    <!-- /section -->
 </main>
-<?php include("footer.php");?>
+<?php get_footer();?>
