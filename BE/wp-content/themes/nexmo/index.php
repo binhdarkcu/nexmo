@@ -1,49 +1,29 @@
 <?php get_header(); ?>
 <section class="Hero Hero--light Hero--blue-blue">
-   <div class="Hero-midGround"></div>
+   <div class="Hero-midGround" style="background-image: url(<?php echo get_field('home_background', 'option');?>)"></div>
    <div class="Hero-wrapper">
       <div class="Hero-content">
          <div class="Hero-contentInner">
-            <h1 data-reactid="334">Reinventing communication</h1>
+            <h1 data-reactid="334"><?php echo get_field('banner_text', 'option');?></h1>
             <h3 data-reactid="335">
-               <p data-reactid="336">Programmable Building Blocks for Next Generation Communication Applications.</p>
+               <p data-reactid="336"><?php echo get_field('banner_sub_text', 'option');?></p>
             </h3>
-            <a role="link" aria-label="Try it free" class="Btn" href="https://dashboard.nexmo.com/sign-up" data-reactid="337">Try it free</a><a role="link" aria-label="Contact Sales" class="Btn secondary" href="https://www.nexmo.com/contact-sales" data-reactid="338">Contact Sales</a>
+            <a role="link" aria-label="Try it free" class="Btn" href="<?php echo HOME_URL;?>/sign-up" data-reactid="337">Try it free</a><a role="link" aria-label="Contact Sales" class="Btn secondary" href="<?php echo HOME_URL;?>/contact" data-reactid="338">Contact Sales</a>
          </div>
       </div>
       <div class="Hero-bottomIconContainer">
          <ul data-reactid="340">
             <li data-reactid="341">Trusted By</li>
+            <?php
+                $heroIamge = get_field('hero_image', 'option');
+                foreach ( $heroIamge as $hero ) {
+            ?>
             <li data-reactid="342">
                <picture data-reactid="343">
-                  <source srcset="static/images/hero-fitbit@2x.png" media="screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution:192dpi)" data-reactid="344">
-                  <img srcset="static/images/hero-fitbit@2x.png" data-reactid="345">
+                  <img srcset="<?php echo $hero["hero_logo"]?>" data-reactid="345">
                </picture>
             </li>
-            <li data-reactid="346">
-               <picture data-reactid="347">
-                  <source srcset="static/images/hero-viber@2x.png" media="screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution:192dpi)" data-reactid="348">
-                  <img srcset="static/images/hero-viber@2x.png" data-reactid="349">
-               </picture>
-            </li>
-            <li data-reactid="350">
-               <picture data-reactid="351">
-                  <source srcset="static/images/hero-github@2x.png" media="screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution:192dpi)" data-reactid="352">
-                  <img srcset="static/images/hero-github@2x.png" data-reactid="353">
-               </picture>
-            </li>
-            <li data-reactid="354">
-               <picture data-reactid="355">
-                  <source srcset="static/images/hero-expedia@2x.png" media="screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution:192dpi)" data-reactid="356">
-                  <img srcset="static/images/hero-expedia@2x.png" data-reactid="357">
-               </picture>
-            </li>
-            <li data-reactid="358">
-               <picture data-reactid="359">
-                  <source srcset="static/images/hero-airbandb@2x.png" media="screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution:192dpi)" data-reactid="360">
-                  <img srcset="static/images/hero-airbandb@2x.png" data-reactid="361">
-               </picture>
-            </li>
+            <?php } ?>
          </ul>
       </div>
    </div>
@@ -83,7 +63,7 @@
    </div>
 </section>
 
-<?php echo get_template_part("tpl","client.php")?>
+<?php echo get_template_part("tpl","client")?>
 
 <section class="InfoBox is-grey " data-reactid="459">
    <a name="InfoBox" data-reactid="460"></a>

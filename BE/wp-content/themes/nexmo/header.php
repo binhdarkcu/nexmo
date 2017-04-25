@@ -4,7 +4,7 @@
      <div class="center-container">
         <div class="desktop">
            <div class="left">
-              <a class="logo" href="https://www.nexmo.com/"></a>
+              <a class="logo" href="https://www.nexmo.com/" style="background-image: url(<?php echo get_field('logo_image', 'option');?>)"></a>
               <div class="DropdownNavMenu products-dropdown hover-to-open">
                  <div class="dropbtn" data-reactid="10">Products</div>
                  <div class="dropdown-content" data-reactid="11">
@@ -24,36 +24,26 @@
                                    </td>
                                 </tr>
                                 <tr>
+                                    <?php
+                                     	$arg_product = array(
+                                     		'post_type'                     => 'products',
+                                             'posts_per_page' =>  3 ,
+                                 		    'order'			 => 'asc'
+                                     	);
+                                     	$prodcts_menus = get_posts($arg_product);
+                                     	foreach ( $prodcts_menus as $prodcts_menu ) {
+                                     ?>
                                    <td>
                                       <div>
-                                         <a href="https://www.nexmo.com/products/sms">
+                                         <a href="<?php echo get_the_permalink($prodcts_menu->ID);?>">
                                             <div class="PageNavLink">
-                                               <div class="page-title page-link">SMS</div>
+                                               <div class="page-title page-link"><?php echo $prodcts_menu->post_title;?></div>
                                                <div class="page-copy">Programmatically send and receive SMS from anywhere in the world</div>
                                             </div>
                                          </a>
                                       </div>
                                    </td>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/voice">
-                                            <div class="PageNavLink">
-                                               <div class="page-title page-link">Voice</div>
-                                               <div class="page-copy">Build modern communications customized for any app, website or voice-based communications system</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/verify">
-                                            <div class="PageNavLink more-right-padding">
-                                               <div class="page-title page-link">Verify</div>
-                                               <div class="page-copy">Two factor authentication made simple through an API or SDK</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
+                                   <?php } ?>
                                 </tr>
                                 <tr>
                                    <td>
