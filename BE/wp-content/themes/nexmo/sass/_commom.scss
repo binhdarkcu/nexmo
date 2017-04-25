@@ -18,6 +18,11 @@
 }
 .Blog-sidebarContent{
     h2{
-        padding: 20px 0;
+        padding: 20px 0 ;
+    }
+}
+@media screen and (min-width: 800px){
+    .Navigation-level2 .is-active .Navigation-Dropdown{
+            background-position: 190px 14px!important;
     }
 }
