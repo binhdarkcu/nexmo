@@ -279,6 +279,9 @@ a, a:focus {
 .UseCaseSingle-howItWorksItemText {
   background-position: 70px; }
 
+.Blog-sidebarContent h2 {
+  padding: 20px 0; }
+
 /* Slider */
 .slick-slider {
   position: relative;
