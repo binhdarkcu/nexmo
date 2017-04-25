@@ -30,101 +30,25 @@
                                              'posts_per_page' =>  3 ,
                                  		    'order'			 => 'asc'
                                      	);
-                                     	$prodcts_menus = get_posts($arg_product);
-                                     	foreach ( $prodcts_menus as $prodcts_menu ) {
+                                     	$products_menus = get_posts($arg_product);
+                                     	foreach ( $products_menus as $products_menu ) {
                                      ?>
                                    <td>
                                       <div>
-                                         <a href="<?php echo get_the_permalink($prodcts_menu->ID);?>">
+                                         <a href="<?php echo get_the_permalink($products_menu->ID);?>">
                                             <div class="PageNavLink">
-                                               <div class="page-title page-link"><?php echo $prodcts_menu->post_title;?></div>
-                                               <div class="page-copy">Programmatically send and receive SMS from anywhere in the world</div>
+                                               <div class="page-title page-link"><?php echo $products_menu->post_title;?></div>
+                                               <div class="page-copy"><?php echo $products_menu->post_content;?></div>
                                             </div>
                                          </a>
                                       </div>
                                    </td>
                                    <?php } ?>
                                 </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/chat">
-                                            <div class="PageNavLink">
-                                               <div class="page-title page-link">Chat App</div>
-                                               <div class="page-copy">Engage customers in real-time using Facebook Messenger, WeChat, Viber and others</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/sip-trunking">
-                                            <div class="PageNavLink">
-                                               <div class="page-title page-link">SIP Trunking</div>
-                                               <div class="page-copy">Make and receive calls from the cloud using your existing VoIP infrastructure</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/number-insight">
-                                            <div class="PageNavLink more-right-padding">
-                                               <div class="page-title page-link">Number Insight</div>
-                                               <div class="page-copy">Real-time intelligence on any phone number in the world</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
                              </tbody>
                           </table>
                        </div>
-                       <div class="NavGroup" data-reactid="61">
-                          <table data-reactid="62">
-                             <tbody data-reactid="63">
-                                <tr data-reactid="64">
-                                   <td data-reactid="65"></td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/products/phone-numbers">
-                                            <div class="PageNavLink border-bottom more-right-padding">
-                                               <div class="page-title page-link">Virtual Phone Numbers</div>
-                                               <div class="page-copy">Provision virtual numbers to send and receive messages and phone calls from anywhere in the world.</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/platform">
-                                            <div class="PageNavLink">
-                                               <div class="page-title page-link">The Nexmo Platform</div>
-                                               <div class="page-copy">Build and deploy global-scale communications applications with speed and confidence.</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/pricing">
-                                            <div class="PageNavLink">
-                                               <div class="page-title page-link">Pricing</div>
-                                               <!-- react-text: 727 --><!-- /react-text -->
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                             </tbody>
-                          </table>
-                       </div>
+
                        <!-- react-text: 87 --><!-- /react-text --><!-- react-text: 88 --><!-- /react-text -->
                     </div>
                  </div>
@@ -146,7 +70,7 @@
                                 <tr data-reactid="100">
                                    <td data-reactid="101">
                                       <div data-reactid="102">
-                                         <a href="https://www.nexmo.com/use-cases" data-reactid="103">
+                                         <a href="<?php echo HOME_URL;?>/use-cases" data-reactid="103">
                                             <div class="PageNavLink" data-reactid="104">
                                                <div class="page-title page-link" data-reactid="105">Use Cases</div>
                                                <!-- react-text: 106 --><!-- /react-text -->
@@ -155,42 +79,28 @@
                                       </div>
                                    </td>
                                 </tr>
+                                <?php
+                                    $arg_usecase = array(
+                                        'post_type'                     => 'resources',
+                                         'posts_per_page' =>  3 ,
+                                        'orderby'			 => 'rand'
+                                    );
+                                    $usecasesMenu = get_posts($arg_usecase);
+                                    foreach ( $usecasesMenu as $usecase ) {
+                                 ?>
                                 <tr data-reactid="107">
                                    <td data-reactid="108">
                                       <div data-reactid="109">
-                                         <a href="https://www.nexmo.com/use-cases/private-voice-communication" data-reactid="110">
+                                         <a href="<?php echo get_the_permalink($usecase->ID);?>" data-reactid="110">
                                             <div class="PageNavLink more-right-padding no-top-padding more-left-margin" data-reactid="111">
                                                <div class="page-title page-link" data-reactid="112"></div>
-                                               <div class="page-copy" data-reactid="113">Private Voice Communication</div>
+                                               <div class="page-copy" data-reactid="113"><?php echo $usecase->post_title;?></div>
                                             </div>
                                          </a>
                                       </div>
                                    </td>
                                 </tr>
-                                <tr data-reactid="114">
-                                   <td data-reactid="115">
-                                      <div data-reactid="116">
-                                         <a href="https://www.nexmo.com/use-cases/spam-and-botnet-prevention" data-reactid="117">
-                                            <div class="PageNavLink more-right-padding no-top-padding more-left-margin" data-reactid="118">
-                                               <div class="page-title page-link" data-reactid="119"></div>
-                                               <div class="page-copy" data-reactid="120">Spam and Botnet Prevention</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr data-reactid="121">
-                                   <td data-reactid="122">
-                                      <div data-reactid="123">
-                                         <a href="https://www.nexmo.com/use-cases/sms-customer-support" data-reactid="124">
-                                            <div class="PageNavLink more-right-padding no-top-padding more-left-margin" data-reactid="125">
-                                               <div class="page-title page-link" data-reactid="126"></div>
-                                               <div class="page-copy" data-reactid="127">SMS Customer Support</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
+                                <?php } ?>
                                 <tr data-reactid="128">
                                    <td data-reactid="129">
                                       <div data-reactid="130">
