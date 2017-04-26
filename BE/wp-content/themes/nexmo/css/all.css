@@ -1768,5 +1768,11 @@ yx-axis
   background-color: rgba(255, 255, 255, 0.9); }
 
 /* ---------------------------------------- */
+.Blog .wp-pagenavi span {
+  margin-right: 20px; }
+.Blog .wp-pagenavi .current {
+  margin-right: 20px; }
+.Blog .wp-pagenavi .page {
+  margin-right: 20px; }
 
 /*# sourceMappingURL=all.css.map */

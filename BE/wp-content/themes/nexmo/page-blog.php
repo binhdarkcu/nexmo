@@ -18,7 +18,7 @@
          <div class="Blog-content Blog-archive">
             <!-- article -->
 
-            <?php $loop = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => -1 ) ); ?>
+            <?php $loop = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => 1, 'paged' => get_query_var('paged') ) ); ?>
               <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <article id="post-13366" class="post-13366 post type-post status-publish format-standard has-post-thumbnail hentry category-customers">
                    <!-- post thumbnail -->
@@ -50,7 +50,12 @@
                       </p>
                    </div>
                 </article>
-              <?php endwhile; wp_reset_query(); ?>
+
+              <?php endwhile;
+                wp_pagenavi( array( 'query' => $loop ) );
+                wp_reset_query();
+              ?>
+
 
             <!-- /article -->
             <!-- pagination -->
