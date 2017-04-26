@@ -18,8 +18,16 @@
          <div class="Blog-content Blog-archive">
             <!-- article -->
 
-            <?php $loop = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => 1, 'paged' => get_query_var('paged') ) ); ?>
-              <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <?php
+            $args = array(
+                'post_type'=> 'blog',
+                'posts_per_page' => 1,
+                'order'    => 'ASC'
+            );
+            $loop=  query_posts( $args );
+            //  $loop = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => 1, 'paged' => get_query_var('paged') ) ); ?>
+
+              <?php while ( have_posts() ) : the_post(); ?>
                 <article id="post-13366" class="post-13366 post type-post status-publish format-standard has-post-thumbnail hentry category-customers">
                    <!-- post thumbnail -->
                    <div class="Blog-thumbnail">
@@ -52,7 +60,7 @@
                 </article>
 
               <?php endwhile;
-                wp_pagenavi( array( 'query' => $loop ) );
+                wp_pagenavi( );
                 wp_reset_query();
               ?>
 

@@ -71,10 +71,10 @@ function wp_pagenavi( $args = array() ) {
 		'pages' => apply_filters( 'wp_pagenavi_class_pages', 'pages'),
 		'first' => apply_filters( 'wp_pagenavi_class_first', 'first' ),
 		'previouspostslink' => apply_filters( 'wp_pagenavi_class_previouspostslink', 'previouspostslink' ),
-		'extend' => apply_filters( 'wp_pagenavi_class_extend', 'extend' ),
+		'extend' => apply_filters( 'wp_pagenavi_class_extend', 'page-numbers dots' ),
 		'smaller' => apply_filters( 'wp_pagenavi_class_smaller', 'smaller' ),
-		'page' => apply_filters( 'wp_pagenavi_class_page', 'page' ),
-		'current' => apply_filters( 'wp_pagenavi_class_current', 'current'),
+		'page' => apply_filters( 'wp_pagenavi_class_page', 'page-numbers' ),
+		'current' => apply_filters( 'wp_pagenavi_class_current', 'page-numbers current'),
 		'larger' => apply_filters( 'wp_pagenavi_class_larger', 'larger' ),
 		'nextpostslink' => apply_filters( 'wp_pagenavi_class_nextpostslink', 'nextpostslink'),
 		'last' => apply_filters( 'wp_pagenavi_class_last', 'last'),
@@ -328,4 +328,3 @@ class PageNavi_Core {
 		wp_enqueue_style( 'wp-pagenavi', $css_file, false, '2.70' );
 	}
 }
-
