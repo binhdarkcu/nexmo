@@ -8,7 +8,7 @@
             <span>line</span>
         </div>
 
-        <a href="/" class="Navigation-logo">Nexmo</a>
+        <a href="<?php echo HOME_URL;?>" class="Navigation-logo">Nexmo</a>
 
         <div class="Navigation-content">
             <div class="Navigation-content-opacity"></div>

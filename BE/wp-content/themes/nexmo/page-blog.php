@@ -1,7 +1,5 @@
 <?php
   get_header("blog");
-  global $post;
-  while ( have_posts() ) : the_post();
  ?>
 <main role="main">
    <section class="PageTitle PageTitle--blog has-gradient-bg has-white-text">
@@ -19,23 +17,26 @@
             <!-- article -->
 
             <?php
-            $args = array(
-                'post_type'=> 'blog',
-                'posts_per_page' => 1,
-                'order'    => 'ASC'
+            global $paged;
+            $blog_query = query_posts(
+               array(
+                   'post_type'=>'post',
+                   'posts_per_page'=> 3,
+                   'orderby'=>'date',
+                   'paged'=> $paged
+               )
             );
-            $loop=  query_posts( $args );
-            //  $loop = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => 1, 'paged' => get_query_var('paged') ) ); ?>
+            ?>
 
-              <?php while ( have_posts() ) : the_post(); ?>
+              <?php if(have_posts($blog_query->$post)): while(have_posts($blog_query->$post)): the_post($blog_query->$post); ?>
                 <article id="post-13366" class="post-13366 post type-post status-publish format-standard has-post-thumbnail hentry category-customers">
                    <!-- post thumbnail -->
                    <div class="Blog-thumbnail">
-                      <a href="<?php echo get_permalink( $post->ID ); ?>" title="<?php echo get_the_title(); ?>">
+                      <a href="<?php echo get_the_permalink( get_the_ID() ); ?>" title="<?php echo get_the_title(get_the_ID()); ?>">
                         <?php
-                          $image = get_field('image_single_blog');
+                          $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail');
                           if( !empty($image) ): ?>
-                        	<img src="<?php echo $image['url']; ?>?>" class="attachment-post size-post wp-post-image" alt="<?php echo $image['alt']; ?>">
+                        	<img src="<?php echo $image[0]; ?>?>" class="attachment-post size-post wp-post-image" alt="<?php echo $image['alt']; ?>">
                         <?php endif; ?>
                       </a>
                    </div>
@@ -49,7 +50,9 @@
                       <!-- post details -->
                       <span class="date"><?php the_date(); ?></span>
                       <span class="author">Published by <a href="<?php the_author_link();?>" title="Posts by Charles Costa" rel="author"><?php the_author(); ?></a>
-                                                        // <a href="https://www.nexmo.com/blog/category/customers/" rel="tag">Customers</a></span>
+                          <?php $category = get_the_category(); ?>
+                          // <a href="<?php echo get_category_link($category[0]->cat_ID)?>" rel="tag"><?php echo $category[0]->name;?></a>
+                      </span>
                       <span class="comments"></span>
                       <!-- /post details -->
                       <p>
@@ -59,27 +62,13 @@
                    </div>
                 </article>
 
-              <?php endwhile;
-                wp_pagenavi( );
-                wp_reset_query();
-              ?>
-
+              <?php endwhile; endif;?>
+              <?php bt_paginate(); ?>
 
             <!-- /article -->
-            <!-- pagination -->
-            <div class="pagination">
-               <span class="page-numbers current">1</span>
-               <a class="page-numbers" href="https://www.nexmo.com/blog/page/2/">2</a>
-               <a class="page-numbers" href="https://www.nexmo.com/blog/page/3/">3</a>
-               <span class="page-numbers dots">…</span>
-               <a class="page-numbers" href="https://www.nexmo.com/blog/page/43/">43</a>
-               <a class="next page-numbers" href="https://www.nexmo.com/blog/page/2/">Next »</a>
-            </div>
-            <!-- /pagination -->
          </div>
       </section>
    </section>
    <!-- /section -->
 </main>
-<?php endwhile; ?>
 <?php get_footer();?>

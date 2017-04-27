@@ -4,7 +4,7 @@
      <div class="center-container">
         <div class="desktop">
            <div class="left">
-              <a class="logo" href="https://www.nexmo.com/" style="background-image: url(<?php echo get_field('logo_image', 'option');?>)"></a>
+              <a class="logo" href="<?php echo HOME_URL;?>" style="background-image: url(<?php echo get_field('logo_image', 'option');?>)"></a>
               <div class="DropdownNavMenu products-dropdown hover-to-open">
                  <div class="dropbtn" data-reactid="10">Products</div>
                  <div class="dropdown-content" data-reactid="11">
@@ -104,7 +104,7 @@
                                 <tr data-reactid="128">
                                    <td data-reactid="129">
                                       <div data-reactid="130">
-                                         <a href="https://www.nexmo.com/blog" data-reactid="131">
+                                         <a href="<?php echo HOME_URL;?>/blog" data-reactid="131">
                                             <div class="PageNavLink" data-reactid="132">
                                                <div class="page-title page-link" data-reactid="133">Blog</div>
                                                <!-- react-text: 134 --><!-- /react-text -->
@@ -113,42 +113,29 @@
                                       </div>
                                    </td>
                                 </tr>
+                                <?php
+                                    $arg_postblog = array(
+                                        'post_type'                     => 'post',
+                                         'posts_per_page' =>  3 ,
+                                        'orderby'			 => 'rand'
+                                    );
+                                    $blogMenu = get_posts($arg_postblog);
+                                    foreach ( $blogMenu as $blog ) {
+                                 ?>
                                 <tr>
                                    <td>
                                       <div>
-                                         <a href="https://www.nexmo.com/blog/2017/04/14/ai-powered-chatbots-customer-service/">
+                                         <a href="<?php echo get_the_permalink($blog->ID);?>">
                                             <div class="PageNavLink more-right-padding no-top-padding more-left-margin">
                                                <div class="page-title page-link"></div>
-                                               <div class="page-copy">AI-powered Chatbots Augment the Future of Customer Service</div>
+                                               <div class="page-copy"><?php echo $blog->post_title;?></div>
                                             </div>
                                          </a>
                                       </div>
                                    </td>
                                 </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/blog/2017/04/11/implement-two-factor-authentication-2fa-web-apps-node-js-dr/">
-                                            <div class="PageNavLink more-right-padding no-top-padding more-left-margin">
-                                               <div class="page-title page-link"></div>
-                                               <div class="page-copy">How to Implement Two-Factor Authentication (2FA) to Your Web Apps with Node.js</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://www.nexmo.com/blog/2017/04/05/no-developer-no-problem-turnkey-ivr-with-telerivet-and-nexmo/">
-                                            <div class="PageNavLink more-right-padding no-top-padding more-left-margin">
-                                               <div class="page-title page-link"></div>
-                                               <div class="page-copy">No Developer? No Problem. Turnkey Cloud IVR with Telerivet and Nexmo</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
+                                <?php } ?>
+                                
                              </tbody>
                           </table>
                        </div>

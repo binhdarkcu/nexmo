@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-docs" href="https://docs.nexmo.com">Nexmo</a>
+            <a class="navbar-docs" href="<?php echo HOME_URL;?>/documents">Nexmo</a>
         </div>
         <div id="navbar" class="navbar-collapse">
             <ul class="nav navbar-nav navbar-right pull-right">

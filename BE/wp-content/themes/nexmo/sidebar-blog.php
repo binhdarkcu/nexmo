@@ -14,14 +14,13 @@
               <ul>
                 <?php
                 // your taxonomy name
-                  $tax = 'category_blog';
+                  $tax = 'category';
 
                   // get the terms of taxonomy
                   $terms = get_terms( $tax, [
                     'hide_empty' => false, // do not hide empty terms
                   ]);
                   foreach( $terms as $term ) {
-                    if( 0 == $term->count )
                       echo '<li class="cat-item cat-item-44"><a href="'. get_term_link( $term ) .'">'. $term->name .'</a></li>';
                   }
                 ?>
@@ -34,8 +33,8 @@
             <ul class="wpp-list">
               <?php
               $args = array(
-                  'post_type'=> 'blog',
-                  'posts_per_page' => 1,
+                  'post_type'=> 'post',
+                  'posts_per_page' => 7,
                   'orderby '    => 'rand'
               );
               $loop=  query_posts( $args );

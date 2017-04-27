@@ -5,7 +5,13 @@ define('BlOG_NAME',get_bloginfo('blog_name'));
 define('SLOGAN', get_bloginfo('description'));
 //add_image_size( 'thumb-service',225,230,true);
 
-add_theme_support('post-thumbnails',array('post', 'clients'));
+add_theme_support('post-thumbnails',array('post', 'clients', 'blog'));
+
+//paging ajax for homeland
+include 'inc/paging.php';
+
+//Change label for post
+include 'inc/change_label_post.php';
 
 //register menu
 function register_menu() {

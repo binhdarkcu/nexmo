@@ -285,6 +285,9 @@ a, a:focus {
 @media screen and (min-width: 800px) {
   .Navigation-level2 .is-active .Navigation-Dropdown {
     background-position: 190px 14px !important; } }
+.Blog h3 {
+  font-size: 24px; }
+
 /* Slider */
 .slick-slider {
   position: relative;
