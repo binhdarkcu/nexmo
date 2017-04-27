@@ -35,31 +35,22 @@
       <p data-reactid="366">A set of cloud-based communication APIs designed to remove the pain of integrating with multiple carriers – and take you global in the blink of an eye.</p>
    </h3>
    <div class="Products-grid" data-reactid="367">
+       <?php
+           $arg_producticon = array(
+               'post_type'                     => 'products',
+                'posts_per_page' =>  3 ,
+               'order'			 => 'asc'
+           );
+           $products_icons = get_posts($arg_producticon);
+           foreach ( $products_icons as $icon ) {
+               $image = wp_get_attachment_image_src( get_post_thumbnail_id( $icon -> ID ), 'single-post-thumbnail');
+        ?>
       <div class="Products-item Products-item--sms" data-reactid="368">
-         <div class="Products-item-img" data-reactid="369"><a href="https://www.nexmo.com/products/sms" data-reactid="370"><img src="images/hp-product-sms.svg" alt="sms" data-reactid="371"></a></div>
-         <h4 data-reactid="372"><a href="https://www.nexmo.com/products/sms" data-reactid="373">SMS</a></h4>
-         <p data-reactid="374">An SMS API with built-in intelligence for maximum speed, deliverability.</p>
+         <div class="Products-item-img" data-reactid="369"><a href="<?php echo get_the_permalink($icon->ID)?>" data-reactid="370"><img src="<?php echo $image[0];?>" alt="sms" data-reactid="371"></a></div>
+         <h4 data-reactid="372"><a href="<?php echo get_the_permalink($icon->ID)?>" data-reactid="373"><?php echo $icon->post_title;?></a></h4>
+         <p data-reactid="374"><?php echo $icon->post_content;?></p>
       </div>
-      <div class="Products-item Products-item--voice" data-reactid="375">
-         <div class="Products-item-img"><a href="https://www.nexmo.com/products/voice"><img src="images/hp-product-voice.svg" alt="voice" data-reactid="378"></a></div>
-         <h4><a href="https://www.nexmo.com/products/voice" data-reactid="380">Voice</a></h4>
-         <p>Build powerful and reliable voice products with our simple and easy-to-use API.</p>
-      </div>
-      <div class="Products-item Products-item--verify" data-reactid="382">
-         <div class="Products-item-img" data-reactid="383"><a href="https://www.nexmo.com/products/verify" data-reactid="384"><img src="images/hp-product-verify.svg" alt="verify" data-reactid="385"></a></div>
-         <h4 data-reactid="386"><a href="https://www.nexmo.com/products/verify" data-reactid="387">Verify</a></h4>
-         <p data-reactid="388">One API to verify any phone, anywhere. Let us do the heavy lifting, and pay only for results.</p>
-      </div>
-      <div class="Products-item Products-item--chat" data-reactid="389">
-         <div class="Products-item-img" data-reactid="390"><a href="https://www.nexmo.com/products/chat" data-reactid="391"><img src="images/hp-product-chat.svg" alt="chat" data-reactid="392"></a></div>
-         <h4 data-reactid="393"><a href="https://www.nexmo.com/products/chat" data-reactid="394">Chat App</a></h4>
-         <p data-reactid="395">Use a single API to connect to multiple chat apps for real-time customer conversations.</p>
-      </div>
-      <div class="Products-item Products-item--insight" data-reactid="396">
-         <div class="Products-item-img" data-reactid="397"><a href="https://www.nexmo.com/products/number-insight" data-reactid="398"><img src="images/hp-product-insight.svg" alt="insight" data-reactid="399"></a></div>
-         <h4 data-reactid="400"><a href="https://www.nexmo.com/products/number-insight" data-reactid="401">Number Insight</a></h4>
-         <p data-reactid="402">Use our API to get phone number data, reach real people, and eliminate fake accounts.</p>
-      </div>
+      <?php } ?>
    </div>
 </section>
 

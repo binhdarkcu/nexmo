@@ -15,7 +15,7 @@ while ( have_posts() ) : the_post();
                     <h2><?php the_field('product_sub_title'); ?></h2>
                     <h3>
                         <p><?php the_field('product_short_description'); ?></p>
-                    </h3><a role="link" aria-label="Try it free" class="Btn" href="https://dashboard.nexmo.com/sign-up">Try it free</a><a role="link" aria-label="Contact Sales" class="Btn secondary" href="/contact-sales">Contact Sales</a></div>
+                    </h3><a role="link" aria-label="Try it free" class="Btn" href="<?php echo HOME_URL?>/sign-up">Try it free</a><a role="link" aria-label="Contact Sales" class="Btn secondary" href="/contact-sales">Contact Sales</a></div>
             </div>
         </div>
         <section class="Module Demo">
