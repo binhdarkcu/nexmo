@@ -49,7 +49,7 @@ if( function_exists('acf_add_options_page') ) {
 
 function wpb_list_child_pages() {
 
-    global $post;
+    global $post, $string;
     if ($post->post_parent)	{
     	$ancestors=get_post_ancestors($post->ID);
     	$root=count($ancestors)-1;

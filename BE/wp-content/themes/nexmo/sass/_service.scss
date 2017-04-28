@@ -51,5 +51,6 @@ aside.sidebarfloat .nav li ul.children li ul.children{
 aside.sidebarfloat .nav.nav-second-level li a{
 	padding-left: 0!important;
 }
-aside.sidebarfloat .nav li ul.children li a{
+aside.sidebarfloat .nav li.page_item_has_children>.children{
+	display: block;
 }

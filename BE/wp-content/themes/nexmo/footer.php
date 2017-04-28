@@ -109,10 +109,6 @@
          </div>
       </div>
    </div>
-   <div class="CookiePolicy " data-reactid="591">
-      <div class="CookiePolicy--text" data-reactid="592"><span data-reactid="593">This website uses cookies to ensure  you get the best experience on our website.</span><span data-reactid="594"><a class="CookiePolicy--moreInfoButton" href="https://www.nexmo.com/cookie-policy/" data-reactid="595">More info</a></span></div>
-      <div role="button" class="CookiePolicy--dismissButton Btn" data-reactid="596">OK, got it!</div>
-   </div>
 </div>
 </div>
 </div>

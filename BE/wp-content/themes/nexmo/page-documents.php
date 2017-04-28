@@ -11,24 +11,26 @@
             <!-- main content -->
             <div class="col-xs-12 col-md-9">
                 <section class="main-content">
+                    <?php  custom_breadcrumbs();?>
                     <?php if(is_page("documents")) {?>
                         <div class="document-block">
                             <?php
-                                $category = 'documents_category';
-
-                                // get the terms of taxonomy
-                                $terms_category = get_terms( $category, [
-                                  'parent' => 0
-                                ]);
-                                foreach( $terms_category as $cat ) {
-                            ?>
+                                $arg_product_doc = array(
+                                    'post_type'                     => 'products',
+                                     'posts_per_page' =>  -1 ,
+                                    'order'			 => 'asc'
+                                );
+                                $arg_product_docs = get_posts($arg_product_doc);
+                                foreach ( $arg_product_docs as $products_doc ) {
+                             ?>
                             <div class="col-xs-12 col-md-6 ">
                                 <div class="border-solid">
                                     <figure>
-                                        <a href="<?php echo get_term_link( $cat );?>"><img src="<?php the_field("category_icon", $cat)?>" alt="messaging_home"></a>
+                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $products_doc -> ID ), 'single-post-thumbnail'); ?>
+                                        <a href="<?php echo HOME_URL;?>/documents/<?php echo $products_doc->post_name;?>"><img src="<?php echo $image[0];?>" alt="messaging_home"></a>
                                     </figure>
-                                    <h3 class="home-table-header" align="center"><a href="<?php echo get_term_link( $cat );?>"><?php echo $cat->name?></a></h3>
-                                    <p align="center"><?php echo $cat->description;?></p>
+                                    <h3 class="home-table-header" align="center"><a href="<?php echo HOME_URL;?>/documents/<?php echo $products_doc->post_name;?>"><?php echo $products_doc->name?></a></h3>
+                                    <p align="center"><?php echo $products_doc->post_content;?></p>
                                 </div>
                             </div>
                             <?php } ?>
