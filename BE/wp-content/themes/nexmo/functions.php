@@ -46,3 +46,25 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug' => 'theme-general-settings',
      ));
 }
+
+function wpb_list_child_pages() {
+
+    global $post;
+    if ($post->post_parent)	{
+    	$ancestors=get_post_ancestors($post->ID);
+    	$root=count($ancestors)-1;
+    	$parent = $ancestors[$root];
+    } else {
+    	$parent = $post->ID;
+    }
+    if ( is_page() && $parent )
+    	$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $parent . '&echo=0' );
+    else
+    	$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $parent . '&echo=0' );
+    if ( $childpages ) {
+    	$string = '<ul class="nav nav-second-level collapse in">' . $childpages . '</ul>';
+    }
+    return $string;
+}
+
+add_shortcode('wpb_childpages', 'wpb_list_child_pages');
