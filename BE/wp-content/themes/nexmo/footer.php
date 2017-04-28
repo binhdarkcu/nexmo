@@ -4,14 +4,17 @@
          <div class="list" data-reactid="486">
             <ul data-reactid="487">
                <li class="footer__title" data-reactid="488">PRODUCTS</li>
-               <li class="footer__product-name" data-reactid="489"><a href="https://www.nexmo.com/products/voice" data-reactid="490">Voice API</a></li>
-               <li class="footer__product-name" data-reactid="491"><a href="https://www.nexmo.com/products/sms" data-reactid="492">SMS API</a></li>
-               <li class="footer__product-name" data-reactid="493"><a href="https://www.nexmo.com/products/chat" data-reactid="494">Chat App</a></li>
-               <li class="footer__product-name" data-reactid="495"><a href="https://www.nexmo.com/products/verify" data-reactid="496">Verify</a></li>
-               <li class="footer__product-name" data-reactid="497"><a href="https://www.nexmo.com/products/number-insight" data-reactid="498">Number Insight</a></li>
-               <li class="footer__product-name" data-reactid="499"><a href="https://www.nexmo.com/products/sip-trunking" data-reactid="500">SIP Trunking</a></li>
-               <li class="footer__product-name" data-reactid="501"><a href="https://www.nexmo.com/products/phone-numbers" data-reactid="502">Virtual Phone Numbers</a></li>
-               <li class="footer__product-name" data-reactid="503"><a href="https://www.nexmo.com/pricing" data-reactid="504">Pricing</a></li>
+               <?php
+                 $arg_product = array(
+                   'post_type'                     => 'products',
+                        'posts_per_page' =>  3 ,
+                   'order'			 => 'asc'
+                 );
+                 $products_menus = get_posts($arg_product);
+                 foreach ( $products_menus as $products_menu ) {
+                ?>
+                  <li class="footer__product-name" data-reactid="489"><a href="<?php echo get_the_permalink($products_menu->ID);?>" data-reactid="490"><?php echo $products_menu->post_title;?></a></li>
+                <?php }?>
             </ul>
          </div>
          <div class="list disappear" data-reactid="505">
@@ -29,20 +32,33 @@
          <div class="list disappear" data-reactid="523">
             <ul data-reactid="524">
                <li class="footer__title-link" data-reactid="525"><a href="https://www.nexmo.com/use-cases" data-reactid="526">USE CASES</a></li>
-               <li data-reactid="527"><a href="https://www.nexmo.com/use-cases/social-invites" data-reactid="528">Social Invites</a></li>
-               <li data-reactid="529"><a href="https://www.nexmo.com/use-cases/booking-management-via-social-media" data-reactid="530">Booking Management via Social Media</a></li>
-               <li data-reactid="531"><a href="https://www.nexmo.com/use-cases/interactive-voice-response" data-reactid="532">Simple IVR</a></li>
-               <li data-reactid="533"><a href="https://www.nexmo.com/use-cases/mobile-app-promotion" data-reactid="534">Mobile App Promotion</a></li>
-               <li data-reactid="535"><a href="https://www.nexmo.com/use-cases/private-sms-communication" data-reactid="536">Private SMS Communication</a></li>
-               <li data-reactid="537"><a href="https://www.nexmo.com/use-cases/fraud-detection-step-up-verification" data-reactid="538">Fraud Detection and Step-Up Verification</a></li>
+               <?php
+                   $arg_usecase = array(
+                       'post_type'                     => 'resources',
+                        'posts_per_page' =>  3 ,
+                       'orderby'			 => 'rand'
+                   );
+                   $usecasesMenu = get_posts($arg_usecase);
+                   foreach ( $usecasesMenu as $usecase ) {
+                ?>
+               <li data-reactid="527"><a href="<?php echo get_the_permalink($usecase->ID);?>" data-reactid="528"><?php echo $usecase->post_title;?></a></li>
+               <?php }?>
             </ul>
          </div>
          <div class="list disappear" data-reactid="539">
             <ul data-reactid="540">
                <li class="footer__title-link" data-reactid="541"><a href="https://nexmo.com/blog" data-reactid="542">BLOG</a></li>
-               <li><a href="https://www.nexmo.com/blog/2017/04/14/ai-powered-chatbots-customer-service/">AI-powered Chatbots Augment the Future of Customer Service</a></li>
-               <li><a href="https://www.nexmo.com/blog/2017/04/11/implement-two-factor-authentication-2fa-web-apps-node-js-dr/">How to Implement Two-Factor Authentication (2FA) to Your Web Apps with Node.js</a></li>
-               <li><a href="https://www.nexmo.com/blog/2017/04/05/no-developer-no-problem-turnkey-ivr-with-telerivet-and-nexmo/">No Developer? No Problem. Turnkey Cloud IVR with Telerivet and Nexmo</a></li>
+               <?php
+                   $arg_postblog = array(
+                       'post_type'                     => 'post',
+                        'posts_per_page' =>  3 ,
+                       'orderby'			 => 'rand'
+                   );
+                   $blogMenu = get_posts($arg_postblog);
+                   foreach ( $blogMenu as $blog ) {
+                ?>
+               <li><a href="<?php echo get_the_permalink($blog->ID);?>"><?php echo $blog->post_title;?></a></li>
+               <?php } ?>
             </ul>
          </div>
          <div class="list appear left-auto" data-reactid="543">
@@ -76,8 +92,21 @@
    </div>
    <div class="container" data-reactid="576">
       <div class="content content-bottom" data-reactid="577">
-         <div class="footer__logo-row" data-reactid="578"><a class="footer__link footer__link--bottom icon-logo" href="https://www.vonage.com/" target="_blank" data-reactid="579"></a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/terms-of-use" data-reactid="580">Terms of Use</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/privacy-policy" data-reactid="581">Privacy Policy</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/acceptable-use" data-reactid="582">Acceptable Use</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/cookie-policy" data-reactid="583">Cookie Policy</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/security-information" data-reactid="584">Security Information</a><a class="footer__link footer__link--bottom disappear" href="https://www.vonage.com/copyright-policy" data-reactid="585">Copyright Policy</a></div>
-         <div class="footer__icon-row disappear" data-reactid="586"><a class="footer__icon-link icon__linkedin" href="https://www.linkedin.com/company/Nexmo" data-reactid="587"></a><a class="footer__icon-link icon__twitter" href="https://twitter.com/Nexmo" data-reactid="588"></a><a class="footer__icon-link icon__stack-overflow" href="http://stackoverflow.com/questions/tagged/nexmo" data-reactid="589"></a><a class="footer__icon-link icon__github" href="https://github.com/Nexmo" data-reactid="590"></a></div>
+         <div class="footer__logo-row" data-reactid="578"><a class="footer__link footer__link--bottom icon-logo" style="background-image: url(<?php echo get_field('footer_logo', 'option');?>)" href="https://www.vonage.com/" target="_blank" data-reactid="579"></a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/terms-of-use" data-reactid="580">Terms of Use</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/privacy-policy" data-reactid="581">Privacy Policy</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/acceptable-use" data-reactid="582">Acceptable Use</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/cookie-policy" data-reactid="583">Cookie Policy</a><a class="footer__link footer__link--bottom disappear" href="https://www.nexmo.com/security-information" data-reactid="584">Security Information</a><a class="footer__link footer__link--bottom disappear" href="https://www.vonage.com/copyright-policy" data-reactid="585">Copyright Policy</a></div>
+         <div class="footer__icon-row disappear" data-reactid="586">
+           <?php if(get_field('footer_social', 'option')): ?>
+
+               <?php while(the_repeater_field('footer_social', 'option')): ?>
+                  <a class="footer__icon-link icon__linkedin" style="background: url(<?php echo the_sub_field('icon_social');?>) 50% no-repeat;background-size: contain;" href="<?php the_sub_field('link_social')?>" ></a>
+               <?php
+              endwhile; ?>
+
+            <?php endif;?>
+           <!-- <a class="footer__icon-link icon__linkedin" href="<?php the_sub_field('link_social')?>" data-reactid="587"></a>
+           <a class="footer__icon-link" href="https://twitter.com/Nexmo" data-reactid="588"></a>
+           <a class="footer__icon-link icon__stack-overflow" href="http://stackoverflow.com/questions/tagged/nexmo" data-reactid="589"></a>
+           <a class="footer__icon-link icon__github" href="https://github.com/Nexmo" data-reactid="590"></a> -->
+         </div>
       </div>
    </div>
    <div class="CookiePolicy " data-reactid="591">
