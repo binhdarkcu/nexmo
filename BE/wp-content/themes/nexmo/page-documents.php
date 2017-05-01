@@ -15,25 +15,30 @@
                     <?php if(is_page("documents")) {?>
                         <div class="document-block">
                             <?php
-                                $arg_product_doc = array(
-                                    'post_type'                     => 'products',
-                                     'posts_per_page' =>  -1 ,
-                                    'order'			 => 'asc'
-                                );
-                                $arg_product_docs = get_posts($arg_product_doc);
-                                foreach ( $arg_product_docs as $products_doc ) {
+                                global $post;
+                                if ($post->post_parent)	{
+                                	$ancestors=get_post_ancestors($post->ID);
+                                	$root=count($ancestors)-1;
+                                	$parent = $ancestors[$root];
+                                } else {
+                                	$parent = $post->ID;
+                                }
+                                $document_pages = get_pages('hierarchical=0&child_of=' . $parent);
+
+                                foreach ( $document_pages as $products_doc ) {
+                                    if($products_doc -> post_parent == $parent) {
                              ?>
                             <div class="col-xs-12 col-md-6 ">
                                 <div class="border-solid">
                                     <figure>
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $products_doc -> ID ), 'single-post-thumbnail'); ?>
-                                        <a href="<?php echo HOME_URL;?>/documents/<?php echo $products_doc->post_name;?>"><img src="<?php echo $image[0];?>" alt="messaging_home"></a>
+                                        <a href="<?php echo get_the_permalink($products_doc -> ID)?>"><img src="<?php echo $image[0];?>" alt="messaging_home"></a>
                                     </figure>
-                                    <h3 class="home-table-header" align="center"><a href="<?php echo HOME_URL;?>/documents/<?php echo $products_doc->post_name;?>"><?php echo $products_doc->name?></a></h3>
-                                    <p align="center"><?php echo $products_doc->post_content;?></p>
+                                    <h3 class="home-table-header" align="center"><a href="<?php echo get_the_permalink($products_doc->ID);?>"><?php echo $products_doc->post_title?></a></h3>
+                                    <p align="center"><?php echo get_field("document_short_description", $products_doc->ID);?></p>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php } }?>
                         </div>
                     <?php } else if($currentpage->post_parent > 0){ ?>
                         <h1><?php echo $currentpage->post_title;?></h1>

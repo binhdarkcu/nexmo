@@ -4,7 +4,7 @@
         <ul class="nav nav-sidebar">
             <li class="navhead">
 
-                <?php get_template_part("search","documents");?>
+                <?php //get_template_part("search","documents");?>
                 <?php echo wpb_list_child_pages();?>
 
             </li>

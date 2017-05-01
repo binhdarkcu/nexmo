@@ -5,7 +5,7 @@ define('BlOG_NAME',get_bloginfo('blog_name'));
 define('SLOGAN', get_bloginfo('description'));
 //add_image_size( 'thumb-service',225,230,true);
 
-add_theme_support('post-thumbnails',array('post', 'clients', 'blog', 'products'));
+add_theme_support('post-thumbnails',array('post','page', 'clients', 'blog', 'products'));
 
 //paging ajax for homeland
 include 'inc/paging.php';
