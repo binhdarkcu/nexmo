@@ -38,8 +38,9 @@ while ( have_posts() ) : the_post();
                          <?php endif;?>
 
                         </div>
-                        <a href="https://docs.nexmo.com/api-ref/sms-api" class="Btn">View docs            </a>
-                        <a href="https://docs.nexmo.com/libraries/SMSAPI" class="BtnLink">Browse libraries            </a></div>
+                        <!--a href="https://docs.nexmo.com/api-ref/sms-api" class="Btn">View docs            </a>
+                        <a href="https://docs.nexmo.com/libraries/SMSAPI" class="BtnLink">Browse libraries            </a-->
+                    </div>
                     </div>
         </section>
     </section>

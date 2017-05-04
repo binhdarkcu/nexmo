@@ -38,7 +38,7 @@
                                          <a href="<?php echo get_the_permalink($products_menu->ID);?>">
                                             <div class="PageNavLink">
                                                <div class="page-title page-link"><?php echo $products_menu->post_title;?></div>
-                                               <div class="page-copy"><?php echo $products_menu->post_content;?></div>
+                                               <div class="page-copy"><?php echo get_field('product_short_description', $products_menu -> ID);?></div>
                                             </div>
                                          </a>
                                       </div>
@@ -135,7 +135,7 @@
                                    </td>
                                 </tr>
                                 <?php } ?>
-                                
+
                              </tbody>
                           </table>
                        </div>
@@ -153,10 +153,18 @@
                                 <tr data-reactid="143">
                                    <td data-reactid="144"><a class="section-title" href="https://docs.nexmo.com/" data-reactid="145">Documentation</a></td>
                                 </tr>
+                                <?php
+                                    $documents_id = get_id_by_slug('documents');
+                                    print_r($documents_id);
+                                    $document_pages = get_pages('hierarchical=0&child_of=' . 131);
+
+                                    foreach ( $document_pages as $products_doc ) {
+                                        if($products_doc -> post_parent == $parent) {
+                                    ?>
                                 <tr>
                                    <td>
                                       <div>
-                                         <a href="https://docs.nexmo.com/messaging">
+                                         <a href="<?php echo get_the_permalink($products_doc->ID)?>">
                                             <div class="PageNavLink no-top-padding more-right-padding small-link more-left-margin">
                                                <div class="page-title page-link">Messaging</div>
                                                <!-- react-text: 755 --><!-- /react-text -->
@@ -165,90 +173,11 @@
                                       </div>
                                    </td>
                                 </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/voice">
-                                            <div class="PageNavLink no-top-padding more-right-padding small-link more-left-margin">
-                                               <div class="page-title page-link">Voice</div>
-                                               <!-- react-text: 762 --><!-- /react-text -->
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/verify">
-                                            <div class="PageNavLink no-top-padding more-right-padding small-link more-left-margin">
-                                               <div class="page-title page-link">Verify</div>
-                                               <!-- react-text: 769 --><!-- /react-text -->
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/number-insight">
-                                            <div class="PageNavLink no-top-padding more-right-padding small-link more-left-margin">
-                                               <div class="page-title page-link">Number Insight</div>
-                                               <!-- react-text: 776 --><!-- /react-text -->
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
+                                <?php } }?>
                              </tbody>
                           </table>
                        </div>
-                       <div class="NavGroup" data-reactid="174">
-                          <table data-reactid="175">
-                             <tbody data-reactid="176">
-                                <tr data-reactid="177">
-                                   <td data-reactid="178"></td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/libraries">
-                                            <div class="PageNavLink more-right-padding">
-                                               <div class="page-title page-link">Libraries</div>
-                                               <div class="page-copy">Easily integrate communication features into your app</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/tutorials">
-                                            <div class="PageNavLink more-right-padding">
-                                               <div class="page-title page-link">Tutorials</div>
-                                               <div class="page-copy">Implement our use cases using Nexmo libraries</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                      <div>
-                                         <a href="https://docs.nexmo.com/tools">
-                                            <div class="PageNavLink more-right-padding">
-                                               <div class="page-title page-link">Tools</div>
-                                               <div class="page-copy">Discover all the components to get started and manage your Nexmo account</div>
-                                            </div>
-                                         </a>
-                                      </div>
-                                   </td>
-                                </tr>
-                             </tbody>
-                          </table>
-                       </div>
+                       
                        <!-- react-text: 200 --><!-- /react-text --><!-- react-text: 201 --><!-- /react-text -->
                     </div>
                  </div>

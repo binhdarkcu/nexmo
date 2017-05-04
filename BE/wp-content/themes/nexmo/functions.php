@@ -68,3 +68,15 @@ function wpb_list_child_pages() {
 }
 
 add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+
+
+function get_id_by_slug($page_slug, $slug_page_type = 'page') {
+
+	$find_page = get_page_by_path($page_slug, OBJECT, $slug_page_type);
+    print_r($find_page);
+	if ($find_page) {
+		return $find_page->ID;
+	} else {
+		return null;
+	}
+}

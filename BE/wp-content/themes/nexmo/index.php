@@ -48,7 +48,7 @@
       <div class="Products-item Products-item--sms" data-reactid="368">
          <div class="Products-item-img" data-reactid="369"><a href="<?php echo get_the_permalink($icon->ID)?>" data-reactid="370"><img src="<?php echo $image[0];?>" alt="sms" data-reactid="371"></a></div>
          <h4 data-reactid="372"><a href="<?php echo get_the_permalink($icon->ID)?>" data-reactid="373"><?php echo $icon->post_title;?></a></h4>
-         <p data-reactid="374"><?php echo $icon->post_content;?></p>
+         <p data-reactid="374"><?php echo get_field('product_short_description', $icon -> ID);?></p>
       </div>
       <?php } ?>
    </div>
