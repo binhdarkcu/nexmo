@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php /* Template Name: Home Template */ ?>
+<?php get_header();
+global $post;
+while ( have_posts() ) : the_post();
+?>
 <section class="Hero Hero--light Hero--blue-blue">
    <div class="Hero-midGround" style="background-image: url(<?php echo get_field('home_background', 'option');?>)"></div>
    <div class="Hero-wrapper">
@@ -60,32 +64,45 @@
    <a name="InfoBox" data-reactid="460"></a>
    <div class="InfoBox-inner" data-reactid="461">
       <div class="InfoBox-content InfoBox-content--col8" data-reactid="462">
-         <h4 data-reactid="463">Why choose Nexmo</h4>
-         <p data-reactid="464">Real time analytics, direct relationships with carriers and innovation around pain points all come together for a more reliable, and efficient service. Discover how we push the limits to deliver the quality you’ve come to expect.</p>
-         <a role="link" aria-label="DISCOVER THE DIFFERENCE" class="Btn " href="https://www.nexmo.com/platform/" data-reactid="465">DISCOVER THE DIFFERENCE</a>
+         <h4 ><?php the_field('benefit_home_title', $post->ID); ?></h4>
+         <p><?php the_field('benefit_home_description', $post->ID); ?></p>
+         <a role="link" aria-label="DISCOVER THE DIFFERENCE" class="Btn " href="<?php the_field('benefit_home_link', $post->ID); ?>">DISCOVER THE DIFFERENCE</a>
       </div>
    </div>
 </section>
 <section class="Stats Stats--col3 is-grey" data-reactid="466">
    <div class="Stats-inner" data-reactid="467">
-      <div class="Stats-item">
-         <h4>Better</h4>
-         <h5><span>2.5</span><span class="small">m</span></h5>
-         <p>We let you send up to 2.5 million API calls per day – and we can easily offer more if you need us to.</p>
-         <a href="https://www.nexmo.com/products/sms/">View our SMS API</a>
-      </div>
-      <div class="Stats-item">
-         <h4>Smarter</h4>
-         <h5><span>10</span><span class="smaller">,</span><span class="small">000</span></h5>
-         <p>The amount of outages we prevent daily with our algorithms, shielding you from carrier network volatility and making sure your messages get delivered on time.</p>
-         <a href="https://www.nexmo.com/platform">Discover our quality</a>
-      </div>
-      <div class="Stats-item">
-         <h4>Faster</h4>
-         <h5><span>24</span><span class="small">/7</span></h5>
-         <p>Our expert, global support team is renowned for resolving issues quickly. Upgrade to Premium Support for a personalized touch.</p>
-         <a target="_blank" href="https://help.nexmo.com/hc/en-us">Explore support</a>
-      </div>
+     <?php if(get_field('benefit_home_content')): ?>
+
+         <?php while(the_repeater_field('benefit_home_content', $post->ID)): ?>
+           <div class="Stats-item">
+              <h4><?php the_sub_field('benefit_home_content_title', $post->ID)?></h4>
+              <?php
+
+                if( get_sub_field('benefit_home_content_number', $post->ID) ):
+                    while ( has_sub_field('benefit_home_content_number', $post->ID) ) :
+                    ?>
+                		 <h5><span><?php the_sub_field('large_number', $post->ID);?></span><span class="smaller"><?php the_sub_field('smaller_number', $post->ID);?></span><span class="small"><?php the_sub_field('small_number', $post->ID);?></span></h5>
+                    <?php
+                    endwhile;
+                else :
+                endif;
+              ?>
+              <p><?php the_sub_field('benefit_home_content_description', $post->ID)?></p>
+              <?php
+                if( get_sub_field('benefit_home_content_link', $post->ID) ):
+                    while ( has_sub_field('benefit_home_content_link', $post->ID) ) :
+                    ?>
+                    <a href="<?php the_sub_field('benefit_home_content_link_url', $post->ID);?>"><?php the_sub_field('benefit_home_content_link_name', $post->ID);?></a>
+                    <?php
+                    endwhile;
+                else :
+                endif;
+              ?>
+           </div>
+         <?php endwhile; ?>
+      <?php endif;?>
    </div>
 </section>
+<?php endwhile; ?>
 <?php get_footer();?>
