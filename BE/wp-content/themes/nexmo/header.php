@@ -155,7 +155,7 @@
                                 </tr>
                                 <?php
                                     $documents_id = get_id_by_slug('documents');
-                                    print_r($documents_id);
+
                                     $document_pages = get_pages('hierarchical=0&child_of=' . 131);
 
                                     foreach ( $document_pages as $products_doc ) {
@@ -177,7 +177,7 @@
                              </tbody>
                           </table>
                        </div>
-                       
+
                        <!-- react-text: 200 --><!-- /react-text --><!-- react-text: 201 --><!-- /react-text -->
                     </div>
                  </div>

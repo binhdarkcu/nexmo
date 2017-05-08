@@ -47,7 +47,7 @@
          </div>
          <div class="list disappear" data-reactid="539">
             <ul data-reactid="540">
-               <li class="footer__title-link" data-reactid="541"><a href="https://nexmo.com/blog" data-reactid="542">BLOG</a></li>
+               <li class="footer__title-link" data-reactid="541"><a href="<?php echo HOME_URL;?>/blog" data-reactid="542">BLOG</a></li>
                <?php
                    $arg_postblog = array(
                        'post_type'                     => 'post',

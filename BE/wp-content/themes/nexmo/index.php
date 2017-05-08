@@ -1,7 +1,6 @@
 <?php /* Template Name: Home Template */ ?>
 <?php get_header();
-global $post;
-while ( have_posts() ) : the_post();
+
 ?>
 <section class="Hero Hero--light Hero--blue-blue">
    <div class="Hero-midGround" style="background-image: url(<?php echo get_field('home_background', 'option');?>)"></div>
@@ -60,40 +59,43 @@ while ( have_posts() ) : the_post();
 
 <?php echo get_template_part("tpl","client")?>
 
+<?php
+    $homeid = get_page_by_path('home')->ID;
+?>
 <section class="InfoBox is-grey " data-reactid="459">
    <a name="InfoBox" data-reactid="460"></a>
    <div class="InfoBox-inner" data-reactid="461">
       <div class="InfoBox-content InfoBox-content--col8" data-reactid="462">
-         <h4 ><?php the_field('benefit_home_title', $post->ID); ?></h4>
-         <p><?php the_field('benefit_home_description', $post->ID); ?></p>
-         <a role="link" aria-label="DISCOVER THE DIFFERENCE" class="Btn " href="<?php the_field('benefit_home_link', $post->ID); ?>">DISCOVER THE DIFFERENCE</a>
+         <h4 ><?php the_field('benefit_home_title', $homeid); ?></h4>
+         <p><?php the_field('benefit_home_description', $homeid); ?></p>
+         <a role="link" aria-label="DISCOVER THE DIFFERENCE" class="Btn " href="<?php the_field('benefit_home_link', $homeid); ?>">DISCOVER THE DIFFERENCE</a>
       </div>
    </div>
 </section>
 <section class="Stats Stats--col3 is-grey" data-reactid="466">
    <div class="Stats-inner" data-reactid="467">
-     <?php if(get_field('benefit_home_content')): ?>
 
-         <?php while(the_repeater_field('benefit_home_content', $post->ID)): ?>
+     <?php if(have_rows('benefit_home_content', $homeid) ): ?>
+         <?php while(have_rows('benefit_home_content', $homeid)): the_row(); ?>
            <div class="Stats-item">
-              <h4><?php the_sub_field('benefit_home_content_title', $post->ID)?></h4>
+              <h4><?php echo get_sub_field('benefit_home_content_title', $homeid)?></h4>
               <?php
 
-                if( get_sub_field('benefit_home_content_number', $post->ID) ):
-                    while ( has_sub_field('benefit_home_content_number', $post->ID) ) :
+                if( get_sub_field('benefit_home_content_number', $homeid) ):
+                    while ( has_sub_field('benefit_home_content_number', $homeid) ) :
                     ?>
-                		 <h5><span><?php the_sub_field('large_number', $post->ID);?></span><span class="smaller"><?php the_sub_field('smaller_number', $post->ID);?></span><span class="small"><?php the_sub_field('small_number', $post->ID);?></span></h5>
+                		 <h5><span><?php the_sub_field('large_number', $homeid);?></span><span class="smaller"><?php the_sub_field('smaller_number', $homeid);?></span><span class="small"><?php the_sub_field('small_number', $homeid);?></span></h5>
                     <?php
                     endwhile;
                 else :
                 endif;
               ?>
-              <p><?php the_sub_field('benefit_home_content_description', $post->ID)?></p>
+              <p><?php the_sub_field('benefit_home_content_description', $homeid)?></p>
               <?php
-                if( get_sub_field('benefit_home_content_link', $post->ID) ):
-                    while ( has_sub_field('benefit_home_content_link', $post->ID) ) :
+                if( get_sub_field('benefit_home_content_link', $homeid) ):
+                    while ( has_sub_field('benefit_home_content_link', $homeid) ) :
                     ?>
-                    <a href="<?php the_sub_field('benefit_home_content_link_url', $post->ID);?>"><?php the_sub_field('benefit_home_content_link_name', $post->ID);?></a>
+                    <a href="<?php the_sub_field('benefit_home_content_link_url', $homeid);?>"><?php the_sub_field('benefit_home_content_link_name', $homeid);?></a>
                     <?php
                     endwhile;
                 else :
@@ -104,5 +106,4 @@ while ( have_posts() ) : the_post();
       <?php endif;?>
    </div>
 </section>
-<?php endwhile; ?>
 <?php get_footer();?>
