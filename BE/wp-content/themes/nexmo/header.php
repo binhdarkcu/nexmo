@@ -154,19 +154,27 @@
                                    <td data-reactid="144"><a class="section-title" href="https://docs.nexmo.com/" data-reactid="145">Documentation</a></td>
                                 </tr>
                                 <?php
-                                    $documents_id = get_id_by_slug('documents');
+                                    $documents_id = get_page_by_path('documents')->ID;
 
-                                    $document_pages = get_pages('hierarchical=0&child_of=' . 131);
+                                    if ($post->post_parent)	{
+                                    	$ancestors=get_post_ancestors($documents_id);
+                                    	$root=count($ancestors)-1;
+                                    	$parent = $ancestors[$root];
+                                    } else {
+                                    	$parent = $post->ID;
+                                    }
+
+                                    $document_pages = get_pages('hierarchical=0&child_of=' . $documents_id);
 
                                     foreach ( $document_pages as $products_doc ) {
-                                        if($products_doc -> post_parent == $parent) {
+                                        if($products_doc -> post_parent == 173 ) {
                                     ?>
                                 <tr>
                                    <td>
                                       <div>
                                          <a href="<?php echo get_the_permalink($products_doc->ID)?>">
                                             <div class="PageNavLink no-top-padding more-right-padding small-link more-left-margin">
-                                               <div class="page-title page-link">Messaging</div>
+                                               <div class="page-title page-link"><?php echo $products_doc->post_title?></div>
                                                <!-- react-text: 755 --><!-- /react-text -->
                                             </div>
                                          </a>

@@ -18,15 +18,15 @@
             <!-- article -->
 
             <?php
-            global $paged;
-            $blog_query = query_posts(
-               array(
-                   'post_type'=>'post',
-                   'posts_per_page'=> 3,
-                   'orderby'=>'date',
-                   'paged'=> $paged
-               )
-            );
+              global $paged;
+              $blog_query = query_posts(
+                 array(
+                     'post_type'=>'post',
+                     'posts_per_page'=> 3,
+                     'orderby'=>'date',
+                     'paged'=> $paged
+                 )
+              );
             ?>
 
               <?php if(have_posts($blog_query->$post)): while(have_posts($blog_query->$post)): the_post($blog_query->$post); ?>
