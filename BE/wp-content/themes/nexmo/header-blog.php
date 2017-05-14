@@ -37,7 +37,7 @@
                 <ul id="menu-navigation-level1" class="Navigation-level1">
                     <li><a href="<?php echo HOME_URL;?>/documents" class="">Docs</a></li>
                     <li><a href="<?php echo HOME_URL;?>/support" class="">Support</a></li>
-                    <li><a href="https://dashboard.nexmo.com/sign-in" class="uppercase">SIGN IN</a></li>
+                    <li><a href="<?php echo HOME_URL;?>/sign-in" class="uppercase">SIGN IN</a></li>
                 </ul>
             </nav>
         </div>

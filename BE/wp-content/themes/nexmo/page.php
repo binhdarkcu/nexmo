@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post();
 
                 <p>
                     <a href="<?php echo wp_get_referer();?>">&lt; Back</a>
-                    <a role="link" aria-label="Blog home" href="<?php echo HOME_URL;?>/blog">Blog home</a><br/><br/>
+                    <a role="link" aria-label="Blog home" href="<?php echo HOME_URL;?>">Home</a><br/><br/>
                 </p>
                 <!-- post thumbnail -->
                 <div class="Blog-single .Blog-thumbnail">
@@ -42,9 +42,6 @@ while ( have_posts() ) : the_post();
                 </h3>
                 <!-- /post title -->
 
-                <!-- post details -->
-                <span class="date"><?php the_date(); ?></span>
-                <span class="author">Published by <a href="<?php the_author_link();?>" title="Posts by Charles Costa" rel="author"><?php the_author(); ?></a></span>
                 <!-- /post details -->
 
                 <!-- AddThis Sharing Buttons above -->

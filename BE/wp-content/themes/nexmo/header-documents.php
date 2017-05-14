@@ -20,12 +20,26 @@
                 <li><a href="<?php echo HOME_URL;?>/contact" target="_blank">Support</a></li>
                 <li><a href="<?php echo HOME_URL;?>/sign-in" target="_blank">Sign in</a></li>
                 <li class="active"><a href="<?php echo HOME_URL;?>/sign-up" target="_blank">Try it for free</a></li>
-                <li class="navbar-mobile navbar-mobile-first"><a href="<?php echo HOME_URL;?>/messaging">Messaging</a></li>
-                <li class="navbar-mobile"><a href="https://docs.nexmo.com/voice">Voice</a></li>
-                <li class="navbar-mobile"><a href="https://docs.nexmo.com/verify">Verify</a></li>
-                <li class="navbar-mobile"><a href="https://docs.nexmo.com/number-insight">Number Insight</a></li>
-                <li class="navbar-mobile"><a href="https://docs.nexmo.com/tools">Tools</a></li>
-                <li class="navbar-mobile"><a href="https://docs.nexmo.com/tutorials">Tutorials</a></li>
+                
+                <?php
+                $documents_id = get_page_by_path('documents')->ID;
+
+                if ($post->post_parent) {
+                    $ancestors=get_post_ancestors($documents_id);
+                    $root=count($ancestors)-1;
+                    $parent = $ancestors[$root];
+                } else {
+                    $parent = $post->ID;
+                }
+
+                $document_pages = get_pages('hierarchical=0&child_of=' . $documents_id);
+                $i=0;
+                foreach ( $document_pages as $products_doc ) {
+                    $i++;
+                    if($products_doc -> post_parent == 173 ) {
+                ?>
+                <li class="navbar-mobile"><a href="<?php echo get_the_permalink($products_doc->ID)?>"><?php echo $products_doc->post_title?></a></li>
+                <?php } }?>
             </ul>
 
         </div>
