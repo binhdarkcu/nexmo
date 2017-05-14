@@ -21,7 +21,10 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <link rel="shortcut icon" href="https://www.nexmo.com/favicon.ico">
+      
+      <?php if(!is_page("sign-in")) {?>
       <link rel="stylesheet" href="styles.css">
+      <?php }?>
 
       <link rel="stylesheet" href="css/all.css">
       <link rel="apple-touch-icon" href="https://www.nexmo.com/apple-touch-icon.png">

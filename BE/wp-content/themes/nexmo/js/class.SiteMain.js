@@ -4,6 +4,7 @@ var SiteMain = (function() {
 		windowScroll();
 		createSlick('.Clients-content', 2, 2);
 		createSlick('.Carousel', 1, 1);
+		openMenuHome();
 	}
 
 	function openPopup(idDiv){
@@ -22,6 +23,12 @@ var SiteMain = (function() {
 			dots: true,
 			infinite: true
 		});
+	}
+
+	function openMenuHome(){
+		$('.dropbtn').click(function(){
+			$(this).parent().toggleClass('open');
+		})
 	}
 
 	function windowScroll(){
