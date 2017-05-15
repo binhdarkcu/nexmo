@@ -3,7 +3,7 @@
 	<main id="signup" class="container-content">
     <div class="container" id="main">
         <div class="row login-content" id="signup-content">
-            <form id="registration-form" novalidate="novalidate" class="form-validate has-validation-callback" action="/sign-up" method="post" autocomplete="off">
+            <form id="registration-form" novalidate="novalidate" class="form-validate has-validation-callback" action="<?php echo add_query_arg('do', 'register', get_permalink( $post->ID )); ?>" method="post" autocomplete="off">
 
                 <div class="col-md-12 ">
 
@@ -17,14 +17,14 @@
                         <div class="form-group col-md-6">
 
                             <label class="sr-only" for="firstName">First name</label>
-                            <input id="firstName" name="firstName" data-validation="firstname_custom" data-validation-error-msg="You can't leave this empty" placeholder="First name" type="type" class="form-control input-lg" required="true" value="">
+                            <input id="firstName" name="firstName" data-validation="firstname_custom" data-validation-error-msg="You can't leave this empty" placeholder="First name" type="type" class="form-control input-lg" required="true" value="<?php if(isset($_POST['user'])) echo $_POST['first_name'];?>">
                             <span class="fa fa-2x form-control-feedback hide"></span>
 
                         </div>
                         <div class="form-group col-md-6">
 
                             <label class="sr-only" for="lastName">Last name</label>
-                            <input id="lastName" name="lastName" data-validation="lastname_custom" data-validation-error-msg="You can't leave this empty" placeholder="Last name" type="type" class="form-control input-lg" required="true" value="">
+                            <input id="lastName" name="lastName" data-validation="lastname_custom" data-validation-error-msg="You can't leave this empty" placeholder="Last name" type="type" class="form-control input-lg" required="true" value="<?php if(isset($_POST['user'])) echo $_POST['last_name'];?>">
                             <span class="fa fa-2x form-control-feedback hide"></span>
 
                         </div>
@@ -42,7 +42,7 @@
                         <div class="form-group col-md-12">
 
                             <label class="sr-only" for="email">Email address</label>
-                            <input id="email" name="email" data-validation="email" data-validation-error-msg="Enter a valid email address (used for password reset and notifications)" placeholder="Email address" type="email" class="form-control input-lg" required="true" value="">
+                            <input id="email" name="email" data-validation="email" data-validation-error-msg="Enter a valid email address (used for password reset and notifications)" placeholder="Email address" type="email" class="form-control input-lg" required="true" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>">
                             <span class="fa fa-2x form-control-feedback hide"></span>
 
                         </div>
@@ -55,7 +55,7 @@
 
                             <label class="sr-only" for="phone">Phone number</label>
                             <div class="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <input id="phone" name="phone" data-popover-content="#phone-popover" data-validation="phone_custom" data-validation-error-msg="Enter a valid landline or mobile number, VoIP numbers are not accepted" rel="popover" placeholder="Phone number" type="text" data-trigger="focus" class="form-control input-lg" required="true" value="" autocomplete="off"></div>
+                                <input id="phone" name="phone" data-popover-content="#phone-popover" data-validation="phone_custom" data-validation-error-msg="Enter a valid landline or mobile number, VoIP numbers are not accepted" rel="popover" placeholder="Phone number" type="text" data-trigger="focus" class="form-control input-lg" required="true" value="<?php if(isset($_POST['phone'])) echo $_POST['phone'];?>" autocomplete="off"></div>
 	                            <span class="fa fa-2x form-control-feedback hide icon-display"></span>
 	                            <div id="phone-popover" class="hide">
 	                                <ul>
