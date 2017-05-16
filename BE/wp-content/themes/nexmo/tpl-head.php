@@ -5,7 +5,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <!-- Google Tag Manager -->
       <base href="<?php echo get_bloginfo('template_url')?>/"></base>
-      <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script type="text/javascript" src="js/f5aa309349973e3432c82efef811d8d3f95a7fe0.2.js"></script>
       <script type="text/javascript" src="js/i.js"></script>
       <script type="text/javascript" src="js/analytics.min.js"></script>

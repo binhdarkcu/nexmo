@@ -1,4 +1,17 @@
-<?php get_template_part("tpl", "head");?>
+<?php get_template_part("tpl", "head"); ?>
+
+<script>
+  $(document).ready(function(){
+    var userinfo = localStorage["firebaseui::rememberedAccounts"]
+    if(userinfo){
+      console.log(userinfo)
+      //using ajax to register account from google
+      // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
+    }
+  })
+</script>
+
+<input type="hidden">
 <div class="header Nav-header">
   <div class="floating-menu visible">
      <div class="center-container">
