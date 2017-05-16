@@ -4,7 +4,9 @@
   $(document).ready(function(){
     var userinfo = localStorage["firebaseui::rememberedAccounts"]
     if(userinfo){
-      console.log(userinfo)
+      userinfo = $.parseJSON(userinfo)
+      console.log(userinfo[0].email)
+
       //using ajax to register account from google
       // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
     }
