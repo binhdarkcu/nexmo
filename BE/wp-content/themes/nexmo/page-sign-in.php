@@ -2,7 +2,7 @@
 	<?php get_header('login')?>
 
 	<script>
-	  var YOUR_CLIENT_ID = '156665770517-npunp40dr3lvpj4qp79515jcug1lbvmu.apps.googleusercontent.com';
+	  var YOUR_CLIENT_ID = '887811829886-9mgp1uk5qhlsk67otu1nkmg5927pll9f.apps.googleusercontent.com';
 	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/';
 	  var queryString = location.hash.substring(1);
 
@@ -26,6 +26,8 @@
 	          'access_token=' + params['access_token']);
 	      xhr.onreadystatechange = function (e) {
 	        console.log(xhr.response);
+					//set login cookies
+					//redirect to home
 	      };
 	      xhr.send(null);
 	    } else {
@@ -44,7 +46,6 @@
 	    var form = document.createElement('form');
 	    form.setAttribute('method', 'GET'); // Send as a GET request.
 	    form.setAttribute('action', oauth2Endpoint);
-
 	    // Parameters to pass to OAuth 2.0 endpoint.
 	    var params = {'client_id': YOUR_CLIENT_ID,
 	                  'redirect_uri': YOUR_REDIRECT_URI,
@@ -85,7 +86,7 @@
 	          // incremental authorization.
 	          params['scope'] = response['scope'];
 	          localStorage.setItem('oauth2-test-params', JSON.stringify(params) );
-	          
+
 	          if (params['state'] == 'try_sample_request') {
 	            trySampleRequest();
 	          }
@@ -107,7 +108,7 @@
 					<h1>Login</h1>
 					<form id="loginForm" name="loginForm" action="/secure_sign-in" method="post" class="form-validate has-validation-callback">
 					    <input type="hidden" name="_csrf" value="">
-					   
+
 					    <div class="row">
 					        <div class="form-group col-md-12">
 					            <label class="sr-only" for="email">Email address</label>
@@ -146,5 +147,3 @@
 	</main>
 </div>
 <?php echo get_footer('login')?>
-
-
