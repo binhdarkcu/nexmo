@@ -4,15 +4,13 @@ define('HOME_URL',get_home_url());
 define('BlOG_NAME',get_bloginfo('blog_name'));
 define('SLOGAN', get_bloginfo('description'));
 //add_image_size( 'thumb-service',225,230,true);
-function register_my_session()
-{
-  if( !session_id() )
-  {
-    session_start();
-  }
+add_action('init', 'myStartSession', 1);
+function myStartSession() {
+    if(!session_id()) {
+        session_start();
+    }
 }
 
-add_action('init', 'register_my_session');
 
 add_theme_support('post-thumbnails',array('post','page', 'clients', 'blog', 'products'));
 

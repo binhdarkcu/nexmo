@@ -2,23 +2,41 @@
 
 <script>
   $(document).ready(function(){
-    var userinfo = localStorage["firebaseui::rememberedAccounts"]
-    if(userinfo){
-      userinfo = $.parseJSON(userinfo)
-      console.log(userinfo[0].email)
+    var userinfo = localStorage["firebaseui::rememberedAccounts"];
+    var userinfo2 = localStorage["oauth2-params"];
+    if(userinfo2){
+      var userinfo2 = $.parseJSON(userinfo2);
 
       //using ajax to register account from google
       // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
     }
+    dataString = userinfo2 ; // array?
+    var jsonString = JSON.stringify(dataString);
+
+    $.ajax({
+        type: "POST",
+        url: TEMPLATE_PATH+"/script.php",
+        data: {data : jsonString},
+        cache: false,
+
+        success: function(){
+            console.log('ok');
+        }
+    });
   })
 </script>
-
-<input type="hidden">
 <div class="header Nav-header">
   <div class="floating-menu visible">
      <div class="center-container">
         <div class="desktop">
            <div class="left">
+<?php
+//var_dump($userdata);
+if(isset($_SESSION['userdata']))
+  $userAfterParse = get_object_vars($_SESSION['userdata']['user']);
+  print_r($userAfterParse['emailAddress']);
+?>
+
               <a class="logo" href="<?php echo HOME_URL;?>" style="background-image: url(<?php echo get_field('logo_image', 'option');?>)"></a>
               <div class="DropdownNavMenu products-dropdown hover-to-open">
                  <div class="dropbtn" data-reactid="10">Products</div>
@@ -169,6 +187,9 @@
                                    <td data-reactid="144"><a class="section-title" href="<?php echo HOME_URL?>/documents" data-reactid="145">Documentation</a></td>
                                 </tr>
                                 <?php
+
+
+
                                     $documents_id = get_page_by_path('documents')->ID;
 
                                     if ($post->post_parent)	{
@@ -194,7 +215,7 @@
                                             </div>
                                          </a>
                                       </div>
-                                   </td> 
+                                   </td>
                                 </tr>
                                 <?php } }?>
                              </tbody>
@@ -207,8 +228,12 @@
               </div>
            </div>
            <div class="right" data-reactid="202">
-              <a class="link" href="<?php echo HOME_URL;?>/support" data-reactid="203">Support</a><a class="link" href="<?php echo HOME_URL;?>/sign-in" data-reactid="204">Login</a>
+              <a class="link" href="<?php echo HOME_URL;?>/support" data-reactid="203">Support</a>
+              <?php if(!isset($_SESSION['user'])) {?>
+              <a class="link" href="<?php echo HOME_URL;?>/sign-in" data-reactid="204">Sign in</a>
               <div class="button-container" data-reactid="205"><a role="link" aria-label="Try it free" class="Btn secondary" href="<?php echo HOME_URL;?>/sign-up" data-reactid="206">Sign Up</a></div>
+              <?php }?>
+
            </div>
         </div>
      </div>
@@ -250,7 +275,7 @@
                              </td>
                           </tr>
                           <?php } ?>
-                         
+
                           <tr>
                              <td>
                                 <div>
