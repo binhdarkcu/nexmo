@@ -2,10 +2,12 @@
 
 <script>
   $(document).ready(function(){
-    var userinfo = localStorage["firebaseui::rememberedAccounts"]
-    if(userinfo){
-      userinfo = $.parseJSON(userinfo)
-      console.log(userinfo[0].email)
+    var userinfo = localStorage["firebaseui::rememberedAccounts"];
+    var userinfo2 = localStorage["oauth2-params"];
+    debugger
+    if(userinfo2){
+
+      var a = JSON.stringify(userinfo2);
 
       //using ajax to register account from google
       // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
@@ -194,7 +196,7 @@
                                             </div>
                                          </a>
                                       </div>
-                                   </td> 
+                                   </td>
                                 </tr>
                                 <?php } }?>
                              </tbody>
@@ -250,7 +252,7 @@
                              </td>
                           </tr>
                           <?php } ?>
-                         
+
                           <tr>
                              <td>
                                 <div>

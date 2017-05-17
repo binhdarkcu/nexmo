@@ -3,7 +3,7 @@
 
 	<script>
 	  var YOUR_CLIENT_ID = '887811829886-9mgp1uk5qhlsk67otu1nkmg5927pll9f.apps.googleusercontent.com';
-	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/';
+	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/sign-in';
 	  var queryString = location.hash.substring(1);
 
 	  // Parse query string to see if page request is coming from OAuth 2.0 server.
@@ -20,13 +20,15 @@
 	  function trySampleRequest() {
 	    var params = JSON.parse(localStorage.getItem('oauth2-test-params'));
 	    if (params && params['access_token']) {
+
 	      var xhr = new XMLHttpRequest();
 	      xhr.open('GET',
 	          'https://www.googleapis.com/drive/v3/about?fields=user&' +
 	          'access_token=' + params['access_token']);
 	      xhr.onreadystatechange = function (e) {
 	        console.log(xhr.response);
-					//set login cookies
+					localStorage.setItem('oauth2-params',xhr.response );
+					window.location = "/Nexmo/Source/BE/";
 					//redirect to home
 	      };
 	      xhr.send(null);
