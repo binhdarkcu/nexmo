@@ -4,54 +4,13 @@ define('HOME_URL',get_home_url());
 define('BlOG_NAME',get_bloginfo('blog_name'));
 define('SLOGAN', get_bloginfo('description'));
 //add_image_size( 'thumb-service',225,230,true);
-function register_my_session()
-{
-  if( !session_id() )
-  {
-    session_start();
-  }
-}
-add_action('init', 'register_my_session');
-
-require_once ('google_login/Google/src/Google_Client.php');
-require ('google_login/Google//src/contrib/Google_Oauth2Service.php');
-require_once ('google_login/Google/src/contrib/Google_PlusService.php');
-session_start();
- $api = new Google_Client();
- $api->setApplicationName("Nexmo"); // Set Application name
- $api->setClientId('887811829886-9mgp1uk5qhlsk67otu1nkmg5927pll9f.apps.googleusercontent.com'); // Set Client ID
- $api->setClientSecret('Iq1zvxc1kcdQpJgdUTndUhgK'); //Set client Secret
- $api->setAccessType('online'); // Access method
- $api->setScopes(array('https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'));
- $api->setRedirectUri('http://localhost:8080/Nexmo/Source/BE/'); // Enter your file path (Redirect Uri) that you have set to get client ID in API console
- $service = new Google_PlusService($api);
- $URI = $api->createAuthUrl();
-
-
-
-function login() {
-    session_start();
-    $api = new Google_Client();
-    $api->setApplicationName("InfoTuts");
-    $api->setClientId('887811829886-9mgp1uk5qhlsk67otu1nkmg5927pll9f.apps.googleusercontent.com');
-    $api->setClientSecret('Iq1zvxc1kcdQpJgdUTndUhgK');
-    $api->setAccessType('online');
-    $api->setScopes(array('https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile'));
-    $api->setRedirectUri('http://localhost:8080/Nexmo/Source/BE/');
-    $service = new Google_PlusService($api);
-    $oauth2 = new Google_Oauth2Service($api);
-    $api->authenticate();
-    $_SESSION['token'] = $api->getAccessToken();
-    if (isset($_SESSION['token'])) {
-      $set_asess_token = $api->setAccessToken($_SESSION['token']);
-    }
-    if ($api->getAccessToken()) {
-      $data = $service->people->get('me');
-      $user_data = $oauth2->userinfo->get();
+add_action('init', 'myStartSession', 1);
+function myStartSession() {
+    if(!session_id()) {
+        session_start();
     }
 }
 
-add_action( 'init', 'login' );
 
 add_theme_support('post-thumbnails',array('post','page', 'clients', 'blog', 'products'));
 

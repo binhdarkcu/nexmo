@@ -28,7 +28,7 @@
 	      xhr.onreadystatechange = function (e) {
 	        console.log(xhr.response);
 					localStorage.setItem('oauth2-params',xhr.response );
-					window.location = "/Nexmo/Source/BE/";
+					window.location = "/Nexmo/Source/BE/dashboard";
 					//redirect to home
 	      };
 	      xhr.send(null);

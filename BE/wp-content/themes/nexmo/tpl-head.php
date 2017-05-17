@@ -21,7 +21,13 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <link rel="shortcut icon" href="https://www.nexmo.com/favicon.ico">
-      
+
+      <script>
+        var ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+        var HOME_URL = '<?= HOME_URL ?>';
+        var TEMPLATE_PATH = '<?= TEMPLATE_PATH ?>'
+      </script>
+
       <?php if(!is_page("sign-in")) {?>
       <link rel="stylesheet" href="styles.css">
       <?php }?>
