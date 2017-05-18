@@ -42,3 +42,27 @@
       <div id="app" style="height:100%;position:relative;">
          <div class="wrapper">
             <div class="home-page">
+<script>
+  $(document).ready(function(){
+    var userinfo = localStorage["firebaseui::rememberedAccounts"];
+    var userinfo2 = localStorage["oauth2-params"];
+    if(userinfo2){
+      var userinfo2 = $.parseJSON(userinfo2);
+
+      //using ajax to register account from google
+      // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
+    }
+    dataString = userinfo2 ; // array?
+    var jsonString = JSON.stringify(dataString);
+    $.ajax({
+        type: "POST",
+        url: TEMPLATE_PATH+"/script.php",
+        data: {data : jsonString},
+        cache: false,
+
+        success: function(){
+            console.log('ok');
+        }
+    });
+  })
+</script>

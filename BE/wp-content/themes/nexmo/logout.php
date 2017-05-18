@@ -2,6 +2,6 @@
 //logout.php
 session_start(); 
 session_destroy(); 
-$home = HoME_URL;
+$home = get_bloginfo('home');
 header("Location: ".$home); 
 ?>
