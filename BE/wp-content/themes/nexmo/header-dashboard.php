@@ -16,7 +16,6 @@
     }
     dataString = userinfo2 ; // array?
     var jsonString = JSON.stringify(dataString);
-
     $.ajax({
         type: "POST",
         url: TEMPLATE_PATH+"/script.php",

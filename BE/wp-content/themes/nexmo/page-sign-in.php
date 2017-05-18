@@ -3,7 +3,7 @@
 
 	<script>
 	  var YOUR_CLIENT_ID = '156665770517-npunp40dr3lvpj4qp79515jcug1lbvmu.apps.googleusercontent.com';
-	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/sign-in';
+	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/dashboard';
 	  var queryString = location.hash.substring(1);
 
 	  // Parse query string to see if page request is coming from OAuth 2.0 server.
