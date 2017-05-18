@@ -102,19 +102,52 @@
 	  }
 	</script>
 
+	<?php
+	    session_start();
+	    if(isset($_SESSION['user'])){
+	        $link = get_site_url().'/dashboard';
+	        echo "<script>window.location.href = '$link'</script>";
+	    }
 
+	    $logged = false;
+	    $message = "";
+	    if((isset($_GET['do']) && $_GET['do'] == 'userLogin'))
+	    {
+	        global $wpdb;
+	        $email = $_POST['email'];
+	        $password = $_POST['password'];
+					$user = get_user_by('email', $email);
+					var_dump ($user) ;
+					if ( $user && wp_check_password( $password, $user->data->user_pass, $user->ID) )
+	        {
+	            $data = array();
+	            foreach ($results as $key => $value) {
+	                $data[$key] = $value;
+	            }
+	            $logged = true;
+	            $message = "Login success";
+	            unset($data['password']);
+	            $_SESSION['user'] = $data;
+	            $link = get_site_url().'/dashboard';
+	            echo "<script>setTimeout(function(){window.location.href = '$link';},1000);</script>";
+	        }
+	        else{
+	            $message = "Login failed";
+	        }
+	    }
+	?>
 	<main id="login" class="container-content">
 		<div class="container" id="main">
 			<div class="row login-content">
 				<div class="col-md-12">
 					<h1>Login</h1>
-					<form id="loginForm" name="loginForm" action="/secure_sign-in" method="post" class="form-validate has-validation-callback">
+					<form id="loginForm" name="loginForm" action="<?php echo add_query_arg('do', 'userLogin', get_permalink( $post->ID )); ?>" method="post" class="form-validate has-validation-callback">
 					    <input type="hidden" name="_csrf" value="">
 
 					    <div class="row">
 					        <div class="form-group col-md-12">
 					            <label class="sr-only" for="email">Email address</label>
-					            <input id="username" name="username" placeholder="Email address" class="form-control input-lg" data-validation="username_custom" type="email" value="" data-validation-required="true" data-validation-email="true" data-validation-error-msg="Provide your email address">
+					            <input id="username" name="email" placeholder="Email address" class="form-control input-lg" data-validation="username_custom" type="email" value="" data-validation-required="true" data-validation-email="true" data-validation-error-msg="Provide your email address">
 					            <span class="fa fa-2x form-control-feedback hide icon-display"></span>
 
 					        </div>
