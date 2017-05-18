@@ -1,41 +1,12 @@
 <?php get_template_part("tpl", "head"); ?>
 
-<script>
-  $(document).ready(function(){
-    var userinfo = localStorage["firebaseui::rememberedAccounts"];
-    var userinfo2 = localStorage["oauth2-params"];
-    if(userinfo2){
-      var userinfo2 = $.parseJSON(userinfo2);
 
-      //using ajax to register account from google
-      // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
-    }
-    dataString = userinfo2 ; // array?
-    var jsonString = JSON.stringify(dataString);
-
-    $.ajax({
-        type: "POST",
-        url: TEMPLATE_PATH+"/script.php",
-        data: {data : jsonString},
-        cache: false,
-
-        success: function(){
-            console.log('ok');
-        }
-    });
-  })
-</script>
 <div class="header Nav-header">
   <div class="floating-menu visible">
      <div class="center-container">
         <div class="desktop">
            <div class="left">
-<?php
-//var_dump($userdata);
-if(isset($_SESSION['userdata']))
-  $userAfterParse = get_object_vars($_SESSION['userdata']['user']);
-  print_r($userAfterParse['emailAddress']);
-?>
+
 
               <a class="logo" href="<?php echo HOME_URL;?>" style="background-image: url(<?php echo get_field('logo_image', 'option');?>)"></a>
               <div class="DropdownNavMenu products-dropdown hover-to-open">

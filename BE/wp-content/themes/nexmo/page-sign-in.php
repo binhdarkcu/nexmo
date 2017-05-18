@@ -2,7 +2,7 @@
 	<?php get_header('login')?>
 
 	<script>
-	  var YOUR_CLIENT_ID = '887811829886-9mgp1uk5qhlsk67otu1nkmg5927pll9f.apps.googleusercontent.com';
+	  var YOUR_CLIENT_ID = '156665770517-npunp40dr3lvpj4qp79515jcug1lbvmu.apps.googleusercontent.com';
 	  var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/sign-in';
 	  var queryString = location.hash.substring(1);
 

@@ -1,3 +1,17 @@
 header{
-	
+	#navbar{
+		ul {
+		    width: 400px;
+			li{
+				ul{
+					width: auto;
+				}
+			}
+		}
+		.iplogout{
+			background: transparent;
+			    color: #fff;
+    padding: 5px;
+		}
+	}
 }

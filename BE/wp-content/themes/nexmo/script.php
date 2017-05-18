@@ -5,6 +5,6 @@
      $userdata = get_object_vars($data);
 
      $_SESSION['userdata'] = $userdata;
-     //print_r($_SESSION['user'])
+     
 
 ?>
