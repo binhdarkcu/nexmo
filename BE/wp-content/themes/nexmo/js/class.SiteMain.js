@@ -6,7 +6,11 @@ var SiteMain = (function() {
 		createSlick('.Carousel', 1, 1);
 		openMenuHome();
 	}
-	
+	function redirectFuction() {
+		localStorage.clear();
+		sessionStorage.removeItem('SessionUser');
+		window.location.href = HOME_URL + '/sign-in';
+	}
 	function openPopup(idDiv){
 		closePopup();
 		$(idDiv).css('display', 'block');
@@ -47,7 +51,8 @@ var SiteMain = (function() {
 	return {
 		init:init,
 		openPopup:openPopup,
-		closePopup:closePopup
+		closePopup:closePopup,
+		redirectFuction: redirectFuction
 	}
 
 })();

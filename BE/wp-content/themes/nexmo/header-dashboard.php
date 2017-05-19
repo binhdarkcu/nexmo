@@ -1,21 +1,58 @@
+<?php get_template_part("tpl", "head"); ?>
+<script>
+
+  $(document).ready(function(){
+    var userinfo = localStorage["firebaseui::rememberedAccounts"];
+    var userinfo2 = localStorage["oauth2-params"];
+    if(userinfo2){
+      var userinfo2 = $.parseJSON(userinfo2);
+
+      //using ajax to register account from google
+      // http://sharethingz.com/wordpress/custom-user-registration-in-wordpress-using-ajax/
+    }
+		console.log(userinfo2)
+    dataString = userinfo2 ; // array?
+    if (dataString)
+    {
+      sessionStorage.setItem('SessionUser', dataString.user.displayName);
+			$('.nav-name').text(dataString.user.displayName);
+    }
+
+
+    var jsonString = JSON.stringify(dataString);
+    $.ajax({
+        type: "POST",
+        url: TEMPLATE_PATH+"/script.php",
+        data: {data : jsonString},
+        cache: false,
+
+        success: function(){
+            console.log('ok');
+        }
+    });
+
+
+  var HOME_URL = '<?= HOME_URL ?>';
+	console.log(sessionStorage.getItem("SessionUser"));
+	if (!sessionStorage.getItem("SessionUser")) {
+		//window.location.href = HOME_URL + '/sign-in';
+	}
+	var data = sessionStorage.getItem('SessionUser');
+  })
+
+</script>
 <?php
-if(!isset($_SESSION['userdata'])) 
-	header('Location: '.HOME_URL.'/sign-in');
+// if(!isset($_SESSION['userdata']))
+// 	header('Location: '.HOME_URL.'/sign-in');
 
 ?>
 
-<?php get_template_part("tpl", "head"); ?>
+
 <link rel="stylesheet" href="<?php echo TEMPLATE_PATH;?>/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?php echo TEMPLATE_PATH;?>/css/main.css">
 <script type="text/javascript" src="<?php echo TEMPLATE_PATH;?>/js/bootstrap.min.js"></script>
 
-
-<?php
-if(isset($_SESSION['userdata']))
-  $userAfterParse = get_object_vars($_SESSION['userdata']['user']);
-
-?>
 <header>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -33,7 +70,7 @@ if(isset($_SESSION['userdata']))
 
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right pull-right">
-                	
+
 
                     <li class="num-gs-spacing"><a id="nav_docs" href="<?php echo HOME_URL;?>/documents" target="_blank">Docs</a></li>
                     <li><a id="nav_support" href="<?php echo HOME_URL;?>/support" target="_blank">Support</a></li>
@@ -44,9 +81,9 @@ if(isset($_SESSION['userdata']))
                         </a>
                         <ul class="dropdown-menu">
                             <li class="sub-nav">
-                                
-                                    <a class="iplogout" onClick="localStorage.clear();" href="<?php echo TEMPLATE_PATH;?>/logout.php" id="nav_sign_out"> Sign out</a>
-                            
+
+                                    <a class="iplogout" onClick="SiteMain.redirectFuction()" href="javascript:void(0)" id="nav_sign_out"> Sign out</a>
+
                             </li>
                         </ul>
                     </li>
