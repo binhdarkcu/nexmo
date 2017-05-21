@@ -44,7 +44,7 @@
             <div class="home-page">
               <script>
                 var YOUR_CLIENT_ID = '156665770517-npunp40dr3lvpj4qp79515jcug1lbvmu.apps.googleusercontent.com';
-                var YOUR_REDIRECT_URI = 'http://localhost:8080/Nexmo/Source/BE/dashboard';
+                var YOUR_REDIRECT_URI = HOME_URL+'/dashboard';
                 var queryString = location.hash.substring(1);
 
                 // Parse query string to see if page request is coming from OAuth 2.0 server.
@@ -69,7 +69,7 @@
                     xhr.onreadystatechange = function (e) {
                       console.log(xhr.response);
                       localStorage.setItem('oauth2-params',xhr.response );
-                      window.location = "/Nexmo/Source/BE/dashboard";
+                      window.location = HOME_URL + "/dashboard";
                       //redirect to home
                     };
                     xhr.send(null);

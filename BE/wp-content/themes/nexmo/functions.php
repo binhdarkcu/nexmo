@@ -11,6 +11,7 @@ function myStartSession() {
     }
 }
 
+//include 'inc/google_functions.php';
 
 add_theme_support('post-thumbnails',array('post','page', 'clients', 'blog', 'products'));
 
@@ -193,3 +194,7 @@ function save_custom_user_profile_fields($user_id){
 }
 add_action('user_register', 'save_custom_user_profile_fields');
 add_action('profile_update', 'save_custom_user_profile_fields');
+
+
+
+

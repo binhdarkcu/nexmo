@@ -42,8 +42,8 @@
 
 </script>
 <?php
-// if(!isset($_SESSION['userdata']))
-// 	header('Location: '.HOME_URL.'/sign-in');
+if(!isset($_SESSION['userdata']))
+	//header('Location: '.HOME_URL.'/sign-in');
 
 ?>
 

@@ -1,8 +1,12 @@
 <div id="dashboard">
 	<?php get_header('dashboard')?>
 	<?php
-	if(isset($_SESSION['userdata']))
+	if(isset($_SESSION['userdata'])){
 	  $userAfterParse = get_object_vars($_SESSION['userdata']['user']);
+	}else {
+		//header("Location: " .HOME_URL.'/sign-in');
+		//exit();
+	}
 	?>
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -71,3 +75,5 @@
 	</main>
 <?php endwhile;?>
 </div>
+
+<?php get_footer();?>

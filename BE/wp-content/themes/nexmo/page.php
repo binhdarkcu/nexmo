@@ -43,9 +43,12 @@ while ( have_posts() ) : the_post();
                 <!-- /post title -->
 
                 <!-- /post details -->
-
+                <?php if(is_page('contact')){
+                  echo '<div class="contactform">'.do_shortcode("[wpdevart_forms id=1]");
+                } else {?>
                 <!-- AddThis Sharing Buttons above -->
                 <p><?php echo get_the_content()?></p>
+                <?php }?>
             </article
          </div>
       </section>

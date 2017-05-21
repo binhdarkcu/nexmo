@@ -30,3 +30,44 @@
     font-size: 24px;
 }
 
+.contactform{
+  label{
+  font-family: averta,Helvetica,"sans-serif";
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1.6rem;
+    letter-spacing: .5px;
+    line-height: 26px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: #002744;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .wpdevart-input-field {
+    margin-bottom: 10px;
+  }
+  input, textarea{
+    float: none!important;
+    font-family: averta,Helvetica,"sans-serif";
+    font-weight: 300;
+    font-style: normal;
+    transition: all .45s cubic-bezier(.23,1,.32,1) 0ms;
+    appearance: none;
+    border: 1px solid #b2bec6;
+    background-color: #fff;
+    padding: 0 15px;
+    width: 100%;
+    height: 40px;
+    text-shadow: 0 0 0 #2e2e2e;
+    -webkit-text-fill-color: #2e2e2e;
+
+  }
+  textarea{
+  padding-top: 10px;
+    min-height: 150px;
+  }
+  button[type="submit"]{
+      margin-top: 20px;
+  }
+}
